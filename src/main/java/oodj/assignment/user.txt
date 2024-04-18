@@ -1,0 +1,6 @@
+100001, Admin, admin1@gmail.com, password123, a
+100002, Rawan Osama, rawannogood@gmail.com, password456, p
+100003, Atiiqah, shdwwhunter@gmail.com, password789, l
+100004, Nicole Lim, nicolelim@gmail.com, pw123, l
+100005, Michael Chen, michaelchen@gmail.com, pw456, l
+100006, Jennifer Ng, jennifer@gmail.com, pw789, l
