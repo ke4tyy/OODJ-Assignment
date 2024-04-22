@@ -1,0 +1,3 @@
+APD2F2402SE, Bachelors in Software Engineering
+APD2F2402CS, Bachelors in Computer Science
+APU1F2402ACS, Bachelors in Actuarial Science

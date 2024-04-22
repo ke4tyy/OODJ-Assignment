@@ -1,42 +1,74 @@
 package oodj.student;
-
+import oodj.login.loginselection;
 
 public class studentMenu extends javax.swing.JFrame {
+    public static String studID;
+    public static String Name;
+    public static String Intake;
     public studentMenu() {
         initComponents();
+        jLabel1.setText("Welcome back, " + Name + "!");
     }
 
-public void changeLabel(String username) {
-    jLabel1.setText("Welcome back, " + username + "!");
-}
+    public studentMenu(String id, String name, String intake) {
+        initComponents();
+        studID = id;
+        Name = name;
+        Intake = intake; 
+        jLabel1.setText("Welcome back, " + Name + "!");
+    }
+
+
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        submitButton = new javax.swing.JButton();
+        checkButton = new javax.swing.JButton();
+        reqButton = new javax.swing.JButton();
+        editButton = new javax.swing.JButton();
+        logoutButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Welcome, ");
 
-        jButton1.setText("Submit Project");
-
-        jButton3.setText("Check Submission Status");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        submitButton.setText("Submit Project");
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                submitButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Request Presentation Date");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        checkButton.setText("Check Submission Status");
+        checkButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                checkButtonActionPerformed(evt);
+            }
+        });
+
+        reqButton.setText("Request Presentation Date");
+        reqButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reqButtonActionPerformed(evt);
+            }
+        });
+
+        editButton.setText("Edit Project");
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtonActionPerformed(evt);
+            }
+        });
+
+        logoutButton.setText("Log out");
+        logoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutButtonActionPerformed(evt);
             }
         });
 
@@ -52,11 +84,16 @@ public void changeLabel(String username) {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(114, 114, 114)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3)))
+                            .addComponent(reqButton)
+                            .addComponent(checkButton)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(143, 143, 143)
-                        .addComponent(jButton1)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(editButton)
+                            .addComponent(submitButton)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addComponent(logoutButton)))
                 .addContainerGap(114, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -65,24 +102,48 @@ public void changeLabel(String username) {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(46, 46, 46)
-                .addComponent(jButton1)
+                .addComponent(submitButton)
+                .addGap(10, 10, 10)
+                .addComponent(editButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(reqButton)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(26, 26, 26)
-                .addComponent(jButton3)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addComponent(checkButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(logoutButton)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void reqButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reqButtonActionPerformed
+        studentRequestdate req = new studentRequestdate();
+        req.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_reqButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void checkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkButtonActionPerformed
+        studentChecksubmission check = new studentChecksubmission();
+        check.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_checkButtonActionPerformed
+
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+        studentSubmit submit = new studentSubmit();
+        submit.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_submitButtonActionPerformed
+
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_editButtonActionPerformed
+
+    private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
+        loginselection logout = new loginselection();
+        dispose();
+        logout.setVisible(true);
+    }//GEN-LAST:event_logoutButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,9 +181,11 @@ public void changeLabel(String username) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton checkButton;
+    private javax.swing.JButton editButton;
     public static javax.swing.JLabel jLabel1;
+    private javax.swing.JButton logoutButton;
+    private javax.swing.JButton reqButton;
+    private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
 }

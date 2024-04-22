@@ -120,7 +120,7 @@ public class stafflogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String path = "C:\\Users\\User\\OneDrive\\Desktop\\OODJ\\assignment\\src\\main\\java\\oodj\\assignment\\user.txt";
+        String path = "C:\\Users\\Choon\\Downloads\\assignment\\src\\main\\java\\oodj\\assignment\\user.txt";
         
         String namemail = jTextField1.getText();
         String password = jTextField2.getText();

@@ -117,10 +117,10 @@ public class studentlogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String path = "C:\\Users\\User\\OneDrive\\Desktop\\OODJ\\assignment\\src\\main\\java\\oodj\\assignment\\student.txt";
+        String path = "C:\\Users\\Choon\\Downloads\\assignment\\src\\main\\java\\oodj\\assignment\\student.txt";
         
-        String namemail = jTextField1.getText();
-        String password = jTextField2.getText();
+        String namemail = jTextField1.getText().trim();
+        String password = jTextField2.getText().trim();
         boolean login = false; 
         
     try ( BufferedReader reader = new BufferedReader(new FileReader(path))){
@@ -129,11 +129,10 @@ public class studentlogin extends javax.swing.JFrame {
         while ((line = reader.readLine()) != null) {
             String[] user = line.split(", ");
 
-            if (user[1].equals(namemail) || user[2].equals(namemail)) {
+            if (user[1].toLowerCase().equals(namemail.toLowerCase()) || user[2].equals(namemail)) {
                 if (user[3].equals(password)) {
                     login = true;
-                    studentMenu getUsername = new studentMenu();
-                    getUsername.changeLabel(user[1]);
+                    studentMenu getUsername = new studentMenu(user[0], user[1], user[4]);
                     dispose();
                     getUsername.setVisible(true);
                     break;
