@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import oodj.assignment.Assignment;
 
 public class studentSubmit extends javax.swing.JFrame {
     public static String proj;
@@ -18,8 +19,7 @@ public class studentSubmit extends javax.swing.JFrame {
             projBox.removeAllItems();
         }
 
-        String path = "C:\\Users\\Choon\\Downloads\\assignment\\src\\main\\java\\oodj\\assignment\\assessment.txt";
-        try ( BufferedReader reader = new BufferedReader(new FileReader(path))){
+        try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.assessment))){
         String line;
 
         while ((line = reader.readLine()) != null) {
@@ -143,11 +143,8 @@ public class studentSubmit extends javax.swing.JFrame {
     }//GEN-LAST:event_submissionTxtActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        String readpath = "C:\\Users\\Choon\\Downloads\\assignment\\src\\main\\java\\oodj\\assignment\\submission.txt";        
-        String link = submissionTxt.getText().trim();
-        
-        
-    try (BufferedReader reader = new BufferedReader(new FileReader(readpath))) {
+        String link = submissionTxt.getText().trim();      
+    try (BufferedReader reader = new BufferedReader(new FileReader(Assignment.submission))) {
         String line;
 
         boolean hasDuplicate = false;
@@ -162,20 +159,18 @@ public class studentSubmit extends javax.swing.JFrame {
         }
 
         if (hasDuplicate) {
-            submitStatus status = new submitStatus(false, "There is already an existing submission for this project!");
+            checkStatus status = new checkStatus(false, "There is already an existing submission for this project!");
             status.setVisible(true);
         } else if (link.isEmpty()) {
-            submitStatus substatus = new submitStatus(false, "submission link cannot be empty!");
+            checkStatus substatus = new checkStatus(false, "submission link cannot be empty!");
             substatus.setVisible(true);
         } else {
-            submitStatus substatus = new submitStatus(true);
+            checkStatus substatus = new checkStatus(true, 1);
             substatus.setVisible(true);
             dispose();
             
             String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
-            String writepath = "C:\\Users\\Choon\\Downloads\\assignment\\src\\main\\java\\oodj\\assignment\\submission.txt";
-            
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(writepath, true))) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.submission, true))) {
                 writer.write(studentMenu.studID + ", " + projBox.getSelectedItem().toString() + ", " + date + ", " + link + ", " + null);
                 writer.newLine();
             }

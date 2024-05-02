@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.text.SimpleDateFormat;
+import oodj.assignment.Assignment;
 
 public class studentRequestdate extends javax.swing.JFrame {
     public static String proj;
@@ -18,9 +19,7 @@ public class studentRequestdate extends javax.swing.JFrame {
         if (projBox != null) {
             projBox.removeAllItems();
         }
-
-        String path = "C:\\Users\\Choon\\Downloads\\assignment\\src\\main\\java\\oodj\\assignment\\assessment.txt";
-        try ( BufferedReader reader = new BufferedReader(new FileReader(path))){
+        try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.assessment))){
         String line;
 
         while ((line = reader.readLine()) != null) {
@@ -150,9 +149,7 @@ public class studentRequestdate extends javax.swing.JFrame {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         
-        String readpath = "C:\\Users\\Choon\\Downloads\\assignment\\src\\main\\java\\oodj\\assignment\\request.txt";
-
-    try (BufferedReader reader = new BufferedReader(new FileReader(readpath))) {
+    try (BufferedReader reader = new BufferedReader(new FileReader(Assignment.request))) {
         String line;
 
         boolean hasDuplicate = false;
@@ -167,10 +164,10 @@ public class studentRequestdate extends javax.swing.JFrame {
         }
 
         if (hasDuplicate) {
-            submitStatus status = new submitStatus(false, "There is already an existing request for this project!");
+            checkStatus status = new checkStatus(false, "There is already an existing request for this project!");
             status.setVisible(true);
         } else if (dateBox.getSelectedItem() == null || monthBox.getSelectedItem() == null) {
-            submitStatus status = new submitStatus(false, "Month or date cannot be empty!");
+            checkStatus status = new checkStatus(false, "Month or date cannot be empty!");
             status.setVisible(true);
         } else {
             int date = Integer.parseInt((String) dateBox.getSelectedItem());
@@ -184,13 +181,12 @@ public class studentRequestdate extends javax.swing.JFrame {
             String finalCompile = dateFormat.format(cal.getTime());
 
             String currentDate = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
-            String writepath = "C:\\Users\\Choon\\Downloads\\assignment\\src\\main\\java\\oodj\\assignment\\request.txt";
 
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(writepath, true))) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.request, true))) {
                 writer.write(studentMenu.studID + ", " + projBox.getSelectedItem().toString() + ", " + currentDate + ", " + finalCompile + ", " + "pending");
                 writer.newLine();
 
-                submitStatus status = new submitStatus(true);
+                checkStatus status = new checkStatus(true, 1);
                 status.setVisible(true);
                 dispose();
             } catch (IOException e) {

@@ -4,31 +4,35 @@
  */
 package oodj.student;
 
+import oodj.lecturer.lecturerMenu;
+
 /**
  *
  * @author User
  */
-public class submitStatus extends javax.swing.JFrame {
+public class checkStatus extends javax.swing.JFrame {
     private Boolean valid;
-
+    private int Role;
     /**
      * Creates new form submitError
      */
-    public submitStatus() {
+    public checkStatus() {
         initComponents();
     }
-    public submitStatus(Boolean v, String phrase) {
+    public checkStatus(Boolean v, String phrase) {
         initComponents();
         valid = v;
         if (v) {
             jLabel1.setText("submitted");
+            
         }
         else {
             jLabel1.setText(phrase);
         }
     }
-    public submitStatus(Boolean v) {
+    public checkStatus(Boolean v, int role) {
         initComponents();
+        Role = role;
         valid = v;
         if (v) {
             jLabel1.setText("submitted");
@@ -90,9 +94,21 @@ public class submitStatus extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (valid) {
-            studentMenu menu = new studentMenu();
-            menu.setVisible(true);
-            dispose();
+            switch (Role) {
+                case 1:
+                    studentMenu studmenu = new studentMenu();
+                    studmenu.setVisible(true);
+                    dispose();                    
+                case 2:
+                    lecturerMenu lectmenu = new lecturerMenu();
+                    lectmenu.setVisible(true);
+                    dispose();
+                case 3:
+                    //proj manager
+                case 4:
+                    //admin
+            }
+
         } else{dispose();}
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -113,21 +129,23 @@ public class submitStatus extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(submitStatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(checkStatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(submitStatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(checkStatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(submitStatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(checkStatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(submitStatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(checkStatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new submitStatus().setVisible(true);
+                new checkStatus().setVisible(true);
             }
         });
     }

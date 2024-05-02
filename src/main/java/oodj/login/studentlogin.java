@@ -4,6 +4,7 @@ package oodj.login;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import oodj.assignment.Assignment;
 
 /*import student menu file */
 import oodj.student.studentMenu;
@@ -69,9 +70,9 @@ public class studentlogin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
@@ -114,13 +115,12 @@ public class studentlogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String path = "C:\\Users\\Choon\\Downloads\\assignment\\src\\main\\java\\oodj\\assignment\\student.txt";
         
         String namemail = jTextField1.getText().trim();
         String password = jTextField2.getText().trim();
         boolean login = false; 
         
-    try ( BufferedReader reader = new BufferedReader(new FileReader(path))){
+    try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.student))){
         String line;
 
         while ((line = reader.readLine()) != null) {
@@ -137,10 +137,7 @@ public class studentlogin extends javax.swing.JFrame {
             }
         }
 
-        if (login) {
-            System.out.println("Login successful");
-        }
-        else {
+        if (!login) {
             System.out.println("Invalid username/email or password");
             invalid panel = new invalid();
             panel.setVisible(true);

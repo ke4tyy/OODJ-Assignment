@@ -4,6 +4,8 @@ package oodj.login;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import oodj.assignment.Assignment;
+import oodj.lecturer.lecturerMenu;
 
 /**
  *
@@ -73,9 +75,9 @@ public class stafflogin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
@@ -117,50 +119,46 @@ public class stafflogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String path = "C:\\Users\\Choon\\Downloads\\assignment\\src\\main\\java\\oodj\\assignment\\user.txt";
-        
+      
         String namemail = jTextField1.getText();
         String password = jTextField2.getText();
         String role = "";
         
         boolean login = false; 
         
-    try ( BufferedReader reader = new BufferedReader(new FileReader(path))){
+    try (BufferedReader reader = new BufferedReader(new FileReader(Assignment.user))){
         String line;
 
         while ((line = reader.readLine()) != null) {
-            String[] user = line.split(", ");;
-            if (user[1].equals(namemail) || user[2].equals(namemail)) {
+            String[] user = line.split(", ");
+            if (user[1].toLowerCase().equals(namemail.toLowerCase().trim()) || user[2].equals(namemail.trim())) {
                 if (user[3].equals(password)) {
                     role = user[4];
                     login = true;
+                    switch (role) {
+                        case "a": 
+                            System.out.println("admin");
+                            break;
+                        case "l": 
+                            lecturerMenu lect = new lecturerMenu(user[0], user[1]);
+                            dispose();
+                            lect.setVisible(true);
+                            break;
+                        case "p": 
+                            System.out.println("project manager");
+                            break;
+                    }
                     break;
                 }
-            }
+                }
         }
-
-        if (login) {
-            switch (role) {
-                case "a": 
-                    System.out.println("admin");
-                    break;
-                case "l": 
-                    System.out.println("lecturer");
-                    break;
-                case "p": 
-                    System.out.println("project manager");
-                    break;
-            }
-
-        }
-        else {
+        if (!login) {
             System.out.println("Invalid username/email or password");
             invalid panel = new invalid();
             panel.setVisible(true);
         }
-    
     } catch (IOException e) {
-    e.printStackTrace();
+        e.printStackTrace();
     }   
     }//GEN-LAST:event_jButton1ActionPerformed
 

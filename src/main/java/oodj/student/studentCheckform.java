@@ -7,6 +7,7 @@ package oodj.student;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import oodj.assignment.Assignment;
 
 
 /**
@@ -23,10 +24,8 @@ public class studentCheckform extends javax.swing.JFrame {
 
         
         initComponents();
-        
-        String path = "C:\\Users\\Choon\\Downloads\\assignment\\src\\main\\java\\oodj\\assignment\\project.txt";
-        
-        try ( BufferedReader reader = new BufferedReader(new FileReader(path))){
+               
+        try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.project))){
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] sub = line.split(", ");

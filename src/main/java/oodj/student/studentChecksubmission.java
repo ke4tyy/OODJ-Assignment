@@ -6,6 +6,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
+import oodj.assignment.Assignment;
 
 
 public class studentChecksubmission extends javax.swing.JFrame {
@@ -24,8 +25,7 @@ public class studentChecksubmission extends javax.swing.JFrame {
             projBox.removeAllItems();
         }
 
-        String path = "C:\\Users\\Choon\\Downloads\\assignment\\src\\main\\java\\oodj\\assignment\\assessment.txt";
-        try ( BufferedReader reader = new BufferedReader(new FileReader(path))){
+        try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.assessment))){
         String line;
 
         while ((line = reader.readLine()) != null) {
@@ -128,13 +128,12 @@ public class studentChecksubmission extends javax.swing.JFrame {
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
 
         if ("".equals(projBox.getSelectedItem().toString())) {
-            submitStatus substatus = new submitStatus(false, "please select a project");
+            checkStatus substatus = new checkStatus(false, "please select a project");
             substatus.setVisible(true);
         }
         else {
-            String readpath = "C:\\Users\\Choon\\Downloads\\assignment\\src\\main\\java\\oodj\\assignment\\submission.txt";
             
-            try ( BufferedReader reader = new BufferedReader(new FileReader(readpath))){
+            try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.submission))){
             String line;
             boolean submitted = false;
             while ((line = reader.readLine()) != null) {
@@ -157,7 +156,7 @@ public class studentChecksubmission extends javax.swing.JFrame {
 
             }
             if (!submitted) {
-                submitStatus error = new submitStatus(false, "You have not submitted!");
+                checkStatus error = new checkStatus(false, "You have not submitted!");
                 error.setVisible(true);
             }
             

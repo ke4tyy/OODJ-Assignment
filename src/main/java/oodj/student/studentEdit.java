@@ -10,6 +10,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import oodj.assignment.Assignment;
 
 /**
  *
@@ -17,8 +20,6 @@ import java.io.IOException;
  */
 public class studentEdit extends javax.swing.JFrame {
     public static String proj;
-    public String path = path = "C:\\Users\\Choon\\Downloads\\assignment\\src\\main\\java\\oodj\\assignment\\submission.txt";
-
     private static String link;
     public studentEdit() {
         initComponents();
@@ -26,8 +27,7 @@ public class studentEdit extends javax.swing.JFrame {
         if (projBox != null) {
             projBox.removeAllItems();
         }
-
-        try ( BufferedReader reader = new BufferedReader(new FileReader(path))){
+        try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.submission))){
         String line;
         while ((line = reader.readLine()) != null) {
             String[] project = line.split(", ");
@@ -74,8 +74,6 @@ public class studentEdit extends javax.swing.JFrame {
         });
 
         jLabel3.setText("Moodle Link:");
-
-        linkTxt.setText("jTextField1");
 
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -133,32 +131,34 @@ public class studentEdit extends javax.swing.JFrame {
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
 
         if (linkTxt.getText().equals("")) {
-            submitStatus sub = new submitStatus(false, "Submission link cannot be empty!");
+            checkStatus sub = new checkStatus(false, "Submission link cannot be empty!");
             sub.setVisible(true);
         }
         else {
         try {
             // Read the file
-            File file = new File(path);
+            File file = new File(Assignment.submission);
             BufferedReader reader = new BufferedReader(new FileReader(file));
             StringBuilder build = new StringBuilder();
             String line;
+            String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
             while ((line = reader.readLine()) != null) {
                 String[] col = line.split(", ");
             if (col[0].equals(studentMenu.studID) && col[1].equals(projBox.getSelectedItem())) {
                 col[3] = linkTxt.getText();
+                col[2] = date;
             }
                 build.append(String.join(", ", col)).append("\n");
             }
             reader.close();
-            
+
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
             writer.write(build.toString());
             writer.close();
             
             System.out.println("File edited successfully.");
             
-            submitStatus sub = new submitStatus(true);
+            checkStatus sub = new checkStatus(true, 1);
             sub.setVisible(true);
             dispose();
         } catch (IOException e) {
@@ -170,7 +170,7 @@ public class studentEdit extends javax.swing.JFrame {
     }//GEN-LAST:event_submitBtnActionPerformed
 
     private void projBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_projBoxActionPerformed
-        try ( BufferedReader reader = new BufferedReader(new FileReader(path))){
+        try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.submission))){
         String line;
         while ((line = reader.readLine()) != null) {
             String[] project = line.split(", ");
