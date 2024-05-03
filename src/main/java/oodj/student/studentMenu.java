@@ -20,6 +20,7 @@ public class studentMenu extends userAttribute {
     public static String Pw;
     public static String Intake;
     
+    //declare
     public studentMenu() {
         initComponents();
         jLabel1.setText("Welcome back, " + stud.studName + "!");
