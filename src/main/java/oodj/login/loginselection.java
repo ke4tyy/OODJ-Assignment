@@ -1,8 +1,22 @@
 
 package oodj.login;
 
-public class loginselection extends javax.swing.JFrame {
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import oodj.assignment.Assignment;
+import oodj.assignment.userAttribute;
+import oodj.lecturer.lecturerMenu;
+import oodj.student.studentMenu;
 
+public class loginselection extends userAttribute {
+    public static String id;
+    public static String name;
+    public static String mail;
+    public static String pw;
+    
+    public static String intake;
+    
     public loginselection() {
         initComponents();
     }
@@ -12,70 +26,283 @@ public class loginselection extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        staffButton = new javax.swing.JButton();
-        studentButton = new javax.swing.JButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        studentUser = new javax.swing.JLabel();
+        studentPw = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        studentLoginBtn = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        staffLoginBtn = new javax.swing.JButton();
+        staffUser = new javax.swing.JLabel();
+        staffPw = new javax.swing.JLabel();
+        staffNamemail = new javax.swing.JTextField();
+        staffPass = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Login");
 
-        staffButton.setText("Staff login");
-        staffButton.addActionListener(new java.awt.event.ActionListener() {
+        studentUser.setText("Enter username or email");
+
+        studentPw.setText("Enter password");
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                staffButtonActionPerformed(evt);
+                jTextField1ActionPerformed(evt);
             }
         });
 
-        studentButton.setText("Student login");
-        studentButton.addActionListener(new java.awt.event.ActionListener() {
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                studentButtonActionPerformed(evt);
+                jTextField2ActionPerformed(evt);
             }
         });
+
+        studentLoginBtn.setText("Login");
+        studentLoginBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentLoginBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(212, Short.MAX_VALUE)
+                .addComponent(studentLoginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(199, 199, 199))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(67, 67, 67)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(studentPw, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(studentUser, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(26, 26, 26)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
+                        .addComponent(jTextField1))
+                    .addContainerGap(67, Short.MAX_VALUE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(217, Short.MAX_VALUE)
+                .addComponent(studentLoginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(46, 46, 46)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(studentUser)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(27, 27, 27)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(studentPw)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(223, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane1.addTab("Student", jPanel1);
+
+        staffLoginBtn.setText("Login");
+        staffLoginBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staffLoginBtnActionPerformed(evt);
+            }
+        });
+
+        staffUser.setText("Enter username or email");
+
+        staffPw.setText("Enter password");
+
+        staffNamemail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staffNamemailActionPerformed(evt);
+            }
+        });
+
+        staffPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staffPassActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(211, Short.MAX_VALUE)
+                .addComponent(staffLoginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(200, 200, 200))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(67, 67, 67)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(staffPw, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(staffUser, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(staffPass, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
+                        .addComponent(staffNamemail))
+                    .addContainerGap(67, Short.MAX_VALUE)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(216, Short.MAX_VALUE)
+                .addComponent(staffLoginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(46, 46, 46)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(staffUser)
+                        .addComponent(staffNamemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(27, 27, 27)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(staffPw)
+                        .addComponent(staffPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(223, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane1.addTab("Staff", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(staffButton)
-                        .addGap(114, 114, 114)
-                        .addComponent(studentButton)))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGap(14, 14, 14)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(286, 286, 286))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(studentButton)
-                    .addComponent(staffButton))
-                .addGap(38, 38, 38))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void staffButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffButtonActionPerformed
-        stafflogin staff = new stafflogin();
-        dispose();
-        staff.setVisible(true);
-    }//GEN-LAST:event_staffButtonActionPerformed
+    private void staffLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffLoginBtnActionPerformed
 
-    private void studentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentButtonActionPerformed
-        studentlogin student = new studentlogin();
-        dispose();
-        student.setVisible(true);
-    }//GEN-LAST:event_studentButtonActionPerformed
+        String namemail = staffNamemail.getText();
+        String password = staffPass.getText();
+        String role = "";
+
+        boolean login = false;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(Assignment.user))){
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] user = line.split(", ");
+                if (user[1].toLowerCase().equals(namemail.toLowerCase().trim()) || user[2].equals(namemail.trim())) {
+                    if (user[3].equals(password)) {
+                        id = user[0];
+                        name = user[1];
+                        mail = user[2];
+                        pw = user[3];
+                        
+                        role = user[4];
+                        login = true;
+                        switch (role) {
+                            case "a":
+                            System.out.println("admin");
+                            break;
+                            case "l":
+                            lecturerMenu lect = new lecturerMenu(user[0], user[1], user[2], user[3]);
+                            dispose();
+                            lect.setVisible(true);
+                            break;
+                            case "p":
+                            System.out.println("project manager");
+                            break;
+                        }
+                        break;
+                    }
+                }
+            }
+            if (!login) {
+                System.out.println("Invalid username/email or password");
+                invalid panel = new invalid();
+                panel.setVisible(true);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_staffLoginBtnActionPerformed
+
+    private void staffNamemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffNamemailActionPerformed
+
+    }//GEN-LAST:event_staffNamemailActionPerformed
+
+    private void staffPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffPassActionPerformed
+
+    }//GEN-LAST:event_staffPassActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void studentLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentLoginBtnActionPerformed
+        
+        String namemail = jTextField1.getText().trim();
+        String password = jTextField2.getText().trim();
+        boolean login = false; 
+        
+        try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.student))){
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] user = line.split(", ");
+
+                if (user[1].toLowerCase().equals(namemail.toLowerCase()) || user[2].equals(namemail)) {
+                    if (user[3].equals(password)) {
+                        id = user[0];
+                        name = user[1];
+                        mail = user[2];
+                        pw = user[3];
+                        intake = user[4];
+                        
+                        login = true;
+                        studentMenu stud = new studentMenu(user[0], user[1], user[2], user[3], user[4]);
+                        dispose();
+                        stud.setVisible(true);
+                        break;
+                    }
+                }
+            }
+
+            if (!login) {
+                System.out.println("Invalid username/email or password");
+                invalid panel = new invalid();
+                panel.setVisible(true);
+            }
+
+        } catch (IOException e) {
+        e.printStackTrace();
+        }
+    }//GEN-LAST:event_studentLoginBtnActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -87,7 +314,18 @@ public class loginselection extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton staffButton;
-    private javax.swing.JButton studentButton;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    public static javax.swing.JButton staffLoginBtn;
+    private javax.swing.JTextField staffNamemail;
+    private javax.swing.JTextField staffPass;
+    private javax.swing.JLabel staffPw;
+    private javax.swing.JLabel staffUser;
+    public static javax.swing.JButton studentLoginBtn;
+    private javax.swing.JLabel studentPw;
+    private javax.swing.JLabel studentUser;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,16 +10,16 @@ import oodj.lecturer.lecturerMenu;
  *
  * @author User
  */
-public class checkStatus extends javax.swing.JFrame {
+public class statusCheck extends javax.swing.JFrame {
     private Boolean valid;
     private int Role;
     /**
      * Creates new form submitError
      */
-    public checkStatus() {
+    public statusCheck() {
         initComponents();
     }
-    public checkStatus(Boolean v, String phrase) {
+    public statusCheck(Boolean v, String phrase) {
         initComponents();
         valid = v;
         if (v) {
@@ -30,7 +30,7 @@ public class checkStatus extends javax.swing.JFrame {
             jLabel1.setText(phrase);
         }
     }
-    public checkStatus(Boolean v, int role) {
+    public statusCheck(Boolean v, int role) {
         initComponents();
         Role = role;
         valid = v;
@@ -129,14 +129,18 @@ public class checkStatus extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(checkStatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(statusCheck.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(checkStatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(statusCheck.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(checkStatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(statusCheck.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(checkStatus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(statusCheck.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -145,7 +149,7 @@ public class checkStatus extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new checkStatus().setVisible(true);
+                new statusCheck().setVisible(true);
             }
         });
     }

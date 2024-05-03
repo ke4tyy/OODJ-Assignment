@@ -37,19 +37,14 @@
                           <Component id="nameLbl3" min="-2" max="-2" attributes="0"/>
                           <Component id="nameLbl4" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="nameLbl" pref="241" max="32767" attributes="0"/>
-                                  <Component id="dateLbl" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="projLbl" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="nameLbl" pref="241" max="32767" attributes="0"/>
+                              <Component id="dateLbl" alignment="0" max="32767" attributes="0"/>
+                              <Component id="projLbl" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="resultLbl" min="-2" pref="254" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="resultLbl" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">

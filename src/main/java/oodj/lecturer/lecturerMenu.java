@@ -1,6 +1,6 @@
 
 package oodj.lecturer;
-import oodj.student.checkStatus;
+import oodj.student.statusCheck;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -9,37 +9,28 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javax.swing.JComboBox;
 import oodj.assignment.Assignment;
+import oodj.assignment.userAttribute;
 import oodj.login.loginselection;
 
 /**
  *
  * @author Choon
  */
-public class lecturerMenu extends javax.swing.JFrame {
-    public static String lectID;
-    public static String Name; 
-    private static final String DATE_PATTERN = "^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-(19|20)\\d\\d$";
-    private static final Pattern pattern = Pattern.compile(DATE_PATTERN);
-
-
+public class lecturerMenu extends userAttribute {
+    Lecturer lec = new Lecturer();
     
     public lecturerMenu() {
         initComponents();
-        jLabel1.setText("Welcome back, " + Name + "!");
+        jLabel1.setText("Welcome back, " + lec.lectName + "!");
         assignedProj();
     }
     
-    public lecturerMenu(String id, String name) {
+    
+    public lecturerMenu(String id, String name, String mail, String pw) {
         initComponents();
-        lectID = id;
-        Name = name;
-        jLabel1.setText("Welcome back, " + Name + "!");
+        jLabel1.setText("Welcome back, " + lec.lectName + "!");
         assignedProj();
     }
 
@@ -441,16 +432,14 @@ public class lecturerMenu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(133, 133, 133)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(logoutBtn))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -477,7 +466,7 @@ public class lecturerMenu extends javax.swing.JFrame {
                 while ((line = reader.readLine()) != null) {
                     String[] sub = line.split(", ");
                     if (studEvalBox.getSelectedItem().equals("")) {
-                        checkStatus wrong = new checkStatus(false, "no one had submitted.");
+                        statusCheck wrong = new statusCheck(false, "no one had submitted.");
                         wrong.setVisible(true);
                     }
                     else if (sub[0].equals(studEvalBox.getSelectedItem().toString()) && sub[1].equals(projEvalBox.getSelectedItem().toString())) {
@@ -511,7 +500,7 @@ public class lecturerMenu extends javax.swing.JFrame {
             writer.write(build.toString());
             writer.close();
             
-            checkStatus check = new checkStatus(true, 2);
+            statusCheck check = new statusCheck(true, 2);
             check.setVisible(true);
             dispose();
             
@@ -566,12 +555,12 @@ public class lecturerMenu extends javax.swing.JFrame {
                         String linee;
                         while ((linee = read.readLine()) != null) {
                             String[] name = linee.split(", ");
-                            if (proj[3].equals(name[0]) && !proj[3].equals(lectID)) {
+                            if (proj[3].equals(name[0]) && !proj[3].equals(lec.lectID)) {
                                 supSupervisee.setText(name[1]);
                                 supSuperviseeID.setText(name[0]);
                                 break;
                             }
-                            else if (proj[4].equals(name[0]) && !proj[4].equals(lectID)) {
+                            else if (proj[4].equals(name[0]) && !proj[4].equals(lec.lectID)) {
                                 supSupervisee.setText(name[1]);
                                 supSuperviseeID.setText(name[0]);
                                 break;
@@ -634,7 +623,7 @@ public class lecturerMenu extends javax.swing.JFrame {
             writer.write(build.toString());
             writer.close();
 
-            checkStatus check = new checkStatus(true, 2);
+            statusCheck check = new statusCheck(true, 2);
             check.setVisible(true);
             dispose();
 
@@ -644,7 +633,7 @@ public class lecturerMenu extends javax.swing.JFrame {
         }
         
         catch (ParseException ex) {
-                checkStatus check = new checkStatus(false, "invalid date format");
+                statusCheck check = new statusCheck(false, "invalid date format");
                 check.setVisible(true);
         }
     }//GEN-LAST:event_editBtnActionPerformed
@@ -657,7 +646,7 @@ public class lecturerMenu extends javax.swing.JFrame {
                 boolean atleast1 = false;
                 while ((line = reader.readLine()) != null) {
                     String[] proj = line.split(", ");
-                    if (lectID.equals(proj[3]) || lectID.equals(proj[4])) {
+                    if (lec.lectID.equals(proj[3]) || lec.lectID.equals(proj[4])) {
                         projEvalBox.addItem(proj[0]);
                         projReqBox.addItem(proj[0]);
                         projSupBox.addItem(proj[0]);
@@ -695,7 +684,7 @@ public class lecturerMenu extends javax.swing.JFrame {
             writer.write(build.toString());
             writer.close();
             
-            checkStatus check = new checkStatus(true, 2);
+            statusCheck check = new statusCheck(true, 2);
             check.setVisible(true);
             dispose();
         
@@ -717,7 +706,7 @@ public class lecturerMenu extends javax.swing.JFrame {
                 }
             }
             if (!atleast1) {
-                checkStatus check = new checkStatus(false, msg);
+                statusCheck check = new statusCheck(false, msg);
                 check.setVisible(true);
                 targetBox.removeAllItems();
                 if (targetBox.equals(studEvalBox)) {

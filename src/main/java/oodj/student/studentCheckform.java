@@ -20,30 +20,26 @@ public class studentCheckform extends javax.swing.JFrame {
     /**
      * Creates new form studentCheckform
      */
-    public studentCheckform() {
+    public studentCheckform(String id ,String proj, String date, String grade) {
 
         
         initComponents();
                
-        try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.project))){
+        try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.submission))){
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] sub = line.split(", ");
-                if (sub[0].equals(studentChecksubmission.projectID)) {
-                    project = sub[1];
+                if (sub[0].equals(id) && sub[1].equals(proj)) {
+                    nameLbl.setText(id);
+                    projLbl.setText(proj);
+                    dateLbl.setText(date);
+                    resultLbl.setText(grade);
                 }
             }
         }
         catch (IOException e) {
             System.out.println(e);
         }
-        
-        
-        nameLbl.setText(studentChecksubmission.studentID);
-        projLbl.setText(project);
-        dateLbl.setText(studentChecksubmission.subDate);
-        resultLbl.setText(studentChecksubmission.status);
-
     }
 
     /**
@@ -201,7 +197,6 @@ public class studentCheckform extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new studentCheckform().setVisible(true);
             }
         });
     }
