@@ -500,9 +500,8 @@ public class lecturerMenu extends userAttribute {
             writer.write(build.toString());
             writer.close();
             
-            statusCheck check = new statusCheck(true, 2);
+            statusCheck check = new statusCheck(true);
             check.setVisible(true);
-            dispose();
             
         } catch (IOException e) {
             e.printStackTrace();
@@ -623,9 +622,8 @@ public class lecturerMenu extends userAttribute {
             writer.write(build.toString());
             writer.close();
 
-            statusCheck check = new statusCheck(true, 2);
+            statusCheck check = new statusCheck(true);
             check.setVisible(true);
-            dispose();
 
             
         } catch (IOException e) {
@@ -684,9 +682,8 @@ public class lecturerMenu extends userAttribute {
             writer.write(build.toString());
             writer.close();
             
-            statusCheck check = new statusCheck(true, 2);
+            statusCheck check = new statusCheck(true);
             check.setVisible(true);
-            dispose();
         
         } 
         catch (IOException e) {

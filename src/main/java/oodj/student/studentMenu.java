@@ -382,9 +382,8 @@ public class studentMenu extends userAttribute {
                 statusCheck substatus = new statusCheck(false, "submission link cannot be empty!");
                 substatus.setVisible(true);
             } else {
-                statusCheck substatus = new statusCheck(true, 1);
+                statusCheck substatus = new statusCheck(true);
                 substatus.setVisible(true);
-                dispose();
 
                 String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.submission, true))) {
@@ -443,9 +442,8 @@ public class studentMenu extends userAttribute {
                 BufferedWriter writer = new BufferedWriter(new FileWriter(file));
                 writer.write(build.toString());
                 writer.close();
-                statusCheck sub = new statusCheck(true, 1);
+                statusCheck sub = new statusCheck(true);
                 sub.setVisible(true);
-                dispose();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -492,9 +490,8 @@ public class studentMenu extends userAttribute {
                     writer.write(stud.studID + ", " + reqProjBox.getSelectedItem().toString() + ", " + currentDate + ", " + finalCompile + ", " + "pending");
                     writer.newLine();
 
-                    statusCheck status = new statusCheck(true, 1);
+                    statusCheck status = new statusCheck(true);
                     status.setVisible(true);
-                    dispose();
                 } catch (IOException e) {
                     System.out.println("Error: " + e);
                 }

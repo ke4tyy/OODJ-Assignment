@@ -30,9 +30,8 @@ public class statusCheck extends javax.swing.JFrame {
             jLabel1.setText(phrase);
         }
     }
-    public statusCheck(Boolean v, int role) {
+    public statusCheck(Boolean v) {
         initComponents();
-        Role = role;
         valid = v;
         if (v) {
             jLabel1.setText("submitted");
@@ -56,6 +55,7 @@ public class statusCheck extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Submission cannot be empty!");
 
         jButton1.setText("OK");
@@ -70,14 +70,13 @@ public class statusCheck extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(183, 183, 183)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(jLabel1)))
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addGap(183, 183, 183)
+                .addComponent(jButton1)
+                .addContainerGap(188, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,23 +92,7 @@ public class statusCheck extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (valid) {
-            switch (Role) {
-                case 1:
-                    studentMenu studmenu = new studentMenu();
-                    studmenu.setVisible(true);
-                    dispose();                    
-                case 2:
-                    lecturerMenu lectmenu = new lecturerMenu();
-                    lectmenu.setVisible(true);
-                    dispose();
-                case 3:
-                    //proj manager
-                case 4:
-                    //admin
-            }
-
-        } else{dispose();}
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
