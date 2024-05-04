@@ -89,7 +89,7 @@ public abstract class userAttribute extends javax.swing.JFrame {
                             pass[3] = newPass;
                         }
                         combined.append(String.join(", ", pass)).append("\n");
-                    }
+                    }//
                     reader.close();
                     BufferedWriter writer = new BufferedWriter(new FileWriter(file));
                     writer.write(combined.toString());
