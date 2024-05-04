@@ -23,7 +23,7 @@ public class statusCheck extends javax.swing.JFrame {
         initComponents();
         valid = v;
         if (v) {
-            jLabel1.setText("submitted");
+            jLabel1.setText("completed!");
             
         }
         else {
@@ -34,10 +34,10 @@ public class statusCheck extends javax.swing.JFrame {
         initComponents();
         valid = v;
         if (v) {
-            jLabel1.setText("submitted");
+            jLabel1.setText("completed!");
         }
         else {
-            jLabel1.setText("submit error.");
+            jLabel1.setText("input error.");
         }
     }
 

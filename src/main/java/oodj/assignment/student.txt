@@ -1,3 +1,3 @@
-067896, Choong Keat Hao, whosinparis@gmail.com, pass123, APD2F2402SE
+067896, Choong Keat Hao, whosinparis@gmail.com, pass1234, APD2F2402SE
 074470, Ravin, propoolguy@gmail.com, pass456, APD2F2402CS
 089278, Mike Oxlong, mikel@gmail.com, pass789, NULL
