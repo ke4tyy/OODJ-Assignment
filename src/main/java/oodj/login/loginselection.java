@@ -4,8 +4,7 @@ package oodj.login;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import oodj.assignment.Assignment;
-import oodj.assignment.userAttribute;
+import oodj.assignment.*;
 import oodj.lecturer.lecturerMenu;
 import oodj.student.studentMenu;
 
@@ -14,7 +13,6 @@ public class loginselection extends userAttribute {
     public static String name;
     public static String mail;
     public static String pw;
-    
     public static String intake;
     
     public loginselection() {
@@ -210,7 +208,8 @@ public class loginselection extends userAttribute {
 
         boolean login = false;
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(Assignment.user))){
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
             String line;
 
             while ((line = reader.readLine()) != null) {
@@ -260,7 +259,7 @@ public class loginselection extends userAttribute {
     }//GEN-LAST:event_staffPassActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void studentLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentLoginBtnActionPerformed

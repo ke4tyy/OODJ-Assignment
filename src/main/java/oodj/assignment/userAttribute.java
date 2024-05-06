@@ -68,7 +68,6 @@ public abstract class userAttribute extends javax.swing.JFrame {
             this.lectPass = pw;
         }
     }
-    
     public void changePassword(JTextPane txt1, JTextPane txt2, JTextPane txt3, String file, String role) {
         String check = txt1.getText().trim();
         String newPass = txt2.getText().trim();
