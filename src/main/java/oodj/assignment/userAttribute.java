@@ -11,7 +11,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.*;
 import oodj.login.loginselection;
-import oodj.student.statusCheck;
 
 /**
  *
@@ -47,27 +46,29 @@ public abstract class userAttribute extends javax.swing.JFrame {
     }
     
     //lecturer
-    public static class Lecturer{
-        public static String lectID;
-        public static String lectName;
-        public static String lectMail;
-        public static String lectPass;
+    public static class User{
+        public static String userID;
+        public static String userName;
+        public static String userMail;
+        public static String userPass;
         
        
-        public Lecturer() {
-            this.lectID = loginselection.id;
-            this.lectName = loginselection.name;
-            this.lectMail = loginselection.mail;
-            this.lectPass = loginselection.pw;
+        public User() {
+            this.userID = loginselection.id;
+            this.userName = loginselection.name;
+            this.userMail = loginselection.mail;
+            this.userPass = loginselection.pw;
         }
         
-        public Lecturer(String id, String name, String mail, String pw) {
-            this.lectID = id;
-            this.lectName = name;
-            this.lectMail = mail;
-            this.lectPass = pw;
+        public User(String id, String name, String mail, String pw) {
+            this.userID = id;
+            this.userName = name;
+            this.userMail = mail;
+            this.userPass = pw;
         }
     }
+    
+        
     public void changePassword(JTextPane txt1, JTextPane txt2, JTextPane txt3, String file, String role) {
         String check = txt1.getText().trim();
         String newPass = txt2.getText().trim();
@@ -94,11 +95,9 @@ public abstract class userAttribute extends javax.swing.JFrame {
                     writer.write(combined.toString());
                     writer.close();
                     statusCheck comp = new statusCheck(true);
-                    comp.setVisible(true);
                 }
                 else {
                     statusCheck error = new statusCheck(false, "credentials does not match.");
-                    error.setVisible(true);
                 }
 
             }

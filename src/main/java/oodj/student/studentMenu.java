@@ -1,18 +1,13 @@
 package oodj.student;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import oodj.assignment.Assignment;
-import oodj.assignment.userAttribute;
+import oodj.assignment.*;
 import oodj.login.loginselection;
 
 public class studentMenu extends userAttribute {
@@ -456,13 +451,10 @@ public class studentMenu extends userAttribute {
 
             if (hasDuplicate) {
                 statusCheck status = new statusCheck(false, "There is already an existing submission for this project!");
-                status.setVisible(true);
             } else if (link.isEmpty()) {
                 statusCheck substatus = new statusCheck(false, "submission link cannot be empty!");
-                substatus.setVisible(true);
             } else {
                 statusCheck substatus = new statusCheck(true);
-                substatus.setVisible(true);
 
                 String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.submission, true))) {
@@ -498,7 +490,6 @@ public class studentMenu extends userAttribute {
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         if (linkTxt.getText().equals("")) {
             statusCheck sub = new statusCheck(false, "Submission link cannot be empty!");
-            sub.setVisible(true);
         }
         else {
             try {
@@ -521,7 +512,6 @@ public class studentMenu extends userAttribute {
                 writer.write(build.toString());
                 writer.close();
                 statusCheck sub = new statusCheck(true);
-                sub.setVisible(true);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -547,10 +537,8 @@ public class studentMenu extends userAttribute {
 
             if (hasDuplicate) {
                 statusCheck status = new statusCheck(false, "There is already an existing request for this project!");
-                status.setVisible(true);
             } else if (dateBox.getSelectedItem() == null || monthBox.getSelectedItem() == null) {
                 statusCheck status = new statusCheck(false, "Month or date cannot be empty!");
-                status.setVisible(true);
             } else {
                 int date = Integer.parseInt((String) dateBox.getSelectedItem());
                 int month = Integer.parseInt((String) monthBox.getSelectedItem());
@@ -569,7 +557,6 @@ public class studentMenu extends userAttribute {
                     writer.newLine();
 
                     statusCheck status = new statusCheck(true);
-                    status.setVisible(true);
                 } catch (IOException e) {
                     System.out.println("Error: " + e);
                 }
@@ -614,7 +601,6 @@ public class studentMenu extends userAttribute {
 
         if ("".equals(checkProjBox.getSelectedItem().toString())) {
             statusCheck substatus = new statusCheck(false, "please select a project");
-            substatus.setVisible(true);
         }
         else {
             try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.submission))){
@@ -636,7 +622,6 @@ public class studentMenu extends userAttribute {
                 }
                 if (!submitted) {
                     statusCheck error = new statusCheck(false, "You have not submitted!");
-                    error.setVisible(true);
                 }
 
             }

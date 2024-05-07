@@ -1,6 +1,5 @@
 
 package oodj.lecturer;
-import oodj.student.statusCheck;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -10,8 +9,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JComboBox;
-import oodj.assignment.Assignment;
-import oodj.assignment.userAttribute;
+import oodj.assignment.*;
 import oodj.login.loginselection;
 
 /**
@@ -19,18 +17,18 @@ import oodj.login.loginselection;
  * @author Choon
  */
 public class lecturerMenu extends userAttribute {
-    Lecturer lec = new Lecturer();
+    User lec = new User();
     
     public lecturerMenu() {
         initComponents();
-        jLabel1.setText("Welcome back, " + lec.lectName + "!");
+        jLabel1.setText("Welcome back, " + lec.userName + "!");
         assignedProj();
     }
     
     
     public lecturerMenu(String id, String name, String mail, String pw) {
         initComponents();
-        jLabel1.setText("Welcome back, " + lec.lectName + "!");
+        jLabel1.setText("Welcome back, " + lec.userName + "!");
         assignedProj();
     }
 
@@ -543,7 +541,6 @@ public class lecturerMenu extends userAttribute {
                     String[] sub = line.split(", ");
                     if (studEvalBox.getSelectedItem().equals("")) {
                         statusCheck wrong = new statusCheck(false, "no one had submitted.");
-                        wrong.setVisible(true);
                     }
                     else if (sub[0].equals(studEvalBox.getSelectedItem().toString()) && sub[1].equals(projEvalBox.getSelectedItem().toString())) {
                         evalMoodle.setText(sub[3]);
@@ -577,7 +574,6 @@ public class lecturerMenu extends userAttribute {
             writer.close();
             
             statusCheck check = new statusCheck(true);
-            check.setVisible(true);
             
         } catch (IOException e) {
             e.printStackTrace();
@@ -630,12 +626,12 @@ public class lecturerMenu extends userAttribute {
                         String linee;
                         while ((linee = read.readLine()) != null) {
                             String[] name = linee.split(", ");
-                            if (proj[3].equals(name[0]) && !proj[3].equals(lec.lectID)) {
+                            if (proj[3].equals(name[0]) && !proj[3].equals(lec.userID)) {
                                 supSupervisee.setText(name[1]);
                                 supSuperviseeID.setText(name[0]);
                                 break;
                             }
-                            else if (proj[4].equals(name[0]) && !proj[4].equals(lec.lectID)) {
+                            else if (proj[4].equals(name[0]) && !proj[4].equals(lec.userID)) {
                                 supSupervisee.setText(name[1]);
                                 supSuperviseeID.setText(name[0]);
                                 break;
@@ -699,7 +695,6 @@ public class lecturerMenu extends userAttribute {
             writer.close();
 
             statusCheck check = new statusCheck(true);
-            check.setVisible(true);
 
             
         } catch (IOException e) {
@@ -708,29 +703,32 @@ public class lecturerMenu extends userAttribute {
         
         catch (ParseException ex) {
                 statusCheck check = new statusCheck(false, "invalid date format");
-                check.setVisible(true);
         }
     }//GEN-LAST:event_editBtnActionPerformed
 
     private void changeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeButtonActionPerformed
-        changePassword(changeOldTxt, changeNewTxt, changeCfmTxt, Assignment.user, Lecturer.lectID);
+        changePassword(changeOldTxt, changeNewTxt, changeCfmTxt, Assignment.user, lec.userID);
     }//GEN-LAST:event_changeButtonActionPerformed
 
     
     private void assignedProj() {
-            try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.project))){
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader(Assignment.project));
                 String line;
-                String id = "";
                 boolean atleast1 = false;
                 while ((line = reader.readLine()) != null) {
                     String[] proj = line.split(", ");
-                    if (lec.lectID.equals(proj[3]) || lec.lectID.equals(proj[4])) {
+
+
+                    if (proj.length >= 3) {
+                        if (proj[3].equals(lec.userID) || proj[4].equals(lec.userID)) {
                         projEvalBox.addItem(proj[0]);
                         projReqBox.addItem(proj[0]);
                         projSupBox.addItem(proj[0]);
                         projEditBox.addItem(proj[0]);
-                        atleast1 = true;
-                    } 
+                        atleast1 = true;       
+                        }
+                    }
                 }
                 if (!atleast1) {
                     System.out.println("you are not assigned to any project.");
@@ -763,7 +761,6 @@ public class lecturerMenu extends userAttribute {
             writer.close();
             
             statusCheck check = new statusCheck(true);
-            check.setVisible(true);
         
         } 
         catch (IOException e) {
@@ -784,7 +781,6 @@ public class lecturerMenu extends userAttribute {
             }
             if (!atleast1) {
                 statusCheck check = new statusCheck(false, msg);
-                check.setVisible(true);
                 targetBox.removeAllItems();
                 if (targetBox.equals(studEvalBox)) {
                     evalMoodle.setText("");

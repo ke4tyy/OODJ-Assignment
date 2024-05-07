@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import oodj.assignment.*;
 import oodj.lecturer.lecturerMenu;
+import oodj.manager.managerMenu;
 import oodj.student.studentMenu;
 
 public class loginselection extends userAttribute {
@@ -30,13 +31,13 @@ public class loginselection extends userAttribute {
         studentPw = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         studentLoginBtn = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
+        studentPass = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         staffLoginBtn = new javax.swing.JButton();
         staffUser = new javax.swing.JLabel();
         staffPw = new javax.swing.JLabel();
         staffNamemail = new javax.swing.JTextField();
-        staffPass = new javax.swing.JTextField();
+        staffPass = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,12 +61,6 @@ public class loginselection extends userAttribute {
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -77,7 +72,7 @@ public class loginselection extends userAttribute {
                         .addComponent(studentLoginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(199, 199, 199))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(studentPass, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(67, 67, 67))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -92,9 +87,9 @@ public class loginselection extends userAttribute {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(101, Short.MAX_VALUE)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(90, 90, 90)
+                .addContainerGap(99, Short.MAX_VALUE)
+                .addComponent(studentPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(92, 92, 92)
                 .addComponent(studentLoginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,20 +122,19 @@ public class loginselection extends userAttribute {
             }
         });
 
-        staffPass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                staffPassActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(211, Short.MAX_VALUE)
-                .addComponent(staffLoginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(200, 200, 200))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(staffLoginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(200, 200, 200))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(staffPass, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66))))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(67, 67, 67)
@@ -148,15 +142,15 @@ public class loginselection extends userAttribute {
                         .addComponent(staffPw, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(staffUser, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(staffPass, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
-                        .addComponent(staffNamemail))
+                    .addComponent(staffNamemail, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(67, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(216, Short.MAX_VALUE)
+                .addContainerGap(98, Short.MAX_VALUE)
+                .addComponent(staffPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(92, 92, 92)
                 .addComponent(staffLoginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(85, 85, 85))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,11 +159,9 @@ public class loginselection extends userAttribute {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(staffUser)
                         .addComponent(staffNamemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(27, 27, 27)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(staffPw)
-                        .addComponent(staffPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(223, Short.MAX_VALUE)))
+                    .addGap(32, 32, 32)
+                    .addComponent(staffPw)
+                    .addContainerGap(228, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Staff", jPanel2);
@@ -203,7 +195,8 @@ public class loginselection extends userAttribute {
     private void staffLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffLoginBtnActionPerformed
 
         String namemail = staffNamemail.getText();
-        String password = staffPass.getText();
+        char[] p = staffPass.getPassword();
+        String password = new String(p);
         String role = "";
 
         boolean login = false;
@@ -233,7 +226,9 @@ public class loginselection extends userAttribute {
                             lect.setVisible(true);
                             break;
                             case "p":
-                            System.out.println("project manager");
+                            managerMenu proj = new managerMenu(user[0], user[1], user[2], user[3]);
+                            proj.setVisible(true);
+                            dispose();
                             break;
                         }
                         break;
@@ -254,10 +249,6 @@ public class loginselection extends userAttribute {
 
     }//GEN-LAST:event_staffNamemailActionPerformed
 
-    private void staffPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffPassActionPerformed
-
-    }//GEN-LAST:event_staffPassActionPerformed
-
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
 
     }//GEN-LAST:event_jTextField1ActionPerformed
@@ -265,7 +256,8 @@ public class loginselection extends userAttribute {
     private void studentLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentLoginBtnActionPerformed
         
         String namemail = jTextField1.getText().trim();
-        String password = jTextField2.getText().trim();
+        char[] p = studentPass.getPassword();
+        String password = new String(p);
         boolean login = false; 
         
         try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.student))){
@@ -302,10 +294,6 @@ public class loginselection extends userAttribute {
         }
     }//GEN-LAST:event_studentLoginBtnActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -320,13 +308,13 @@ public class loginselection extends userAttribute {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     public static javax.swing.JButton staffLoginBtn;
     private javax.swing.JTextField staffNamemail;
-    private javax.swing.JTextField staffPass;
+    private javax.swing.JPasswordField staffPass;
     private javax.swing.JLabel staffPw;
     private javax.swing.JLabel staffUser;
     public static javax.swing.JButton studentLoginBtn;
+    private javax.swing.JPasswordField studentPass;
     private javax.swing.JLabel studentPw;
     private javax.swing.JLabel studentUser;
     // End of variables declaration//GEN-END:variables

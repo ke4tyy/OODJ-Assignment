@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package oodj.student;
+package oodj.assignment;
 
 import oodj.lecturer.lecturerMenu;
 
@@ -18,17 +18,19 @@ public class statusCheck extends javax.swing.JFrame {
      */
     public statusCheck() {
         initComponents();
+        this.setVisible(true);
     }
     public statusCheck(Boolean v, String phrase) {
         initComponents();
         valid = v;
         if (v) {
-            jLabel1.setText("completed!");
+            jLabel1.setText(phrase);
             
         }
         else {
             jLabel1.setText(phrase);
         }
+        this.setVisible(true);
     }
     public statusCheck(Boolean v) {
         initComponents();
@@ -39,6 +41,7 @@ public class statusCheck extends javax.swing.JFrame {
         else {
             jLabel1.setText("input error.");
         }
+        this.setVisible(true);
     }
 
     /**
