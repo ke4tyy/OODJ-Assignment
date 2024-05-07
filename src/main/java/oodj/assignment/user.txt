@@ -4,3 +4,4 @@
 100004, Nicole Lim, nicolelim@gmail.com, pw234, l
 100005, Michael Chen, michaelchen@gmail.com, pw456, l
 100006, Jennifer Ng, jennifer@gmail.com, pw789, l
+100007, adm, admin123@gmail.com, 123, a

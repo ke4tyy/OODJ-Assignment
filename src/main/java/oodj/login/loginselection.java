@@ -4,6 +4,7 @@ package oodj.login;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import oodj.admin.adminMenu;
 import oodj.assignment.*;
 import oodj.lecturer.lecturerMenu;
 import oodj.manager.managerMenu;
@@ -218,13 +219,17 @@ public class loginselection extends userAttribute {
                         login = true;
                         switch (role) {
                             case "a":
-                            System.out.println("admin");
+                            adminMenu adm = new adminMenu(user[0], user[1], user[2], user[3]);
+                            adm.setVisible(true);
+                            dispose();
                             break;
+                            
                             case "l":
                             lecturerMenu lect = new lecturerMenu(user[0], user[1], user[2], user[3]);
                             dispose();
                             lect.setVisible(true);
                             break;
+                            
                             case "p":
                             managerMenu proj = new managerMenu(user[0], user[1], user[2], user[3]);
                             proj.setVisible(true);
