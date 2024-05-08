@@ -4,6 +4,7 @@
  */
 package oodj.manager;
 
+import java.awt.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -1107,42 +1108,53 @@ public class managerMenu extends userAttribute {
     }
     
     private void addTableElement() {
-        DefaultTableModel sTable = (DefaultTableModel) reportSTable.getModel();
-        sTable.setRowCount(0);
-        try {
-            BufferedReader stud = new BufferedReader(new FileReader(Assignment.student));
-            String line1, line2; 
+    DefaultTableModel sTable = (DefaultTableModel) reportSTable.getModel();
+    sTable.setRowCount(0);
 
+    try {
+        BufferedReader stud = new BufferedReader(new FileReader(Assignment.student));
+        String line1, line2; 
 
-            while ((line1 = stud.readLine()) != null) {
-                String[] s1 = line1.split(", ");            
-                boolean atleast1 = false; 
-                BufferedReader sub = new BufferedReader(new FileReader(Assignment.submission));
+        while ((line1 = stud.readLine()) != null) {
+            String[] s1 = line1.split(", ");            
 
+            BufferedReader sub = new BufferedReader(new FileReader(Assignment.submission));
+            String[] data = null;
+            if (s1.length >= 3) {
                 while ((line2 = sub.readLine()) != null) {
                     String[] s2 = line2.split(", ");
-                    if (s1.length >= 3 && s2.length >= 3) {
-                        if (s1[0].equals(s2[0])) {
-                            atleast1 = true;
-                            String combined = s1[0] + ", " + s1[1] + ", " + s1[4] + ", " + s2[1] + ", " + s2[4];
-                            String[] data = combined.split(", ");
-                            sTable.addRow(data);       
-                        }                
-                    }    
-                }
-                sub.close();
-                if (!atleast1) {
-                    String combined = s1[0] + ", " + s1[1] + ", " + s1[4] + ", null, null";
-                    String[] data = combined.split(", ");
-                    sTable.addRow(data);       
-                }
+                    if (s2.length >= 5 && s1[0].equals(s2[0])) {
+                        ArrayList<String> dataList = new ArrayList<>();
+                        dataList.add(s1[0]);
+                        dataList.add(s1[1]);
+                        dataList.add(s1[4]);
+                        dataList.add(s2[1]);
+                        dataList.add(s2[4]);
+                        data = dataList.toArray(new String[0]);
+                        break;
+                    }
+                    else {
+                        ArrayList<String> dataList = new ArrayList<>();
+                        dataList.add(s1[0]);
+                        dataList.add(s1[1]);
+                        dataList.add(s1[4]);
+                        dataList.add("null");
+                        dataList.add("null");
+                        data = dataList.toArray(new String[0]);
+                    }
+                }    
             }
-            stud.close();
+            if (data != null) {
+                sTable.addRow(data);               
+            }
+
+            sub.close();
+
         }
-        
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        stud.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
     }
     
     
