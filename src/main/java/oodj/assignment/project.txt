@@ -5,4 +5,3 @@ P004, Capstone Project – P1, CapstoneP1, 100005, 100004, 26-5-2024
 P005, Capstone Project – P2, CapstoneP2, 100003, 100004, 29-5-2024
 P006, FYP Report, FYP, 100006, 100003, 25-5-2024
 P007, Object Oriented Development with Java, Group, 100005, 100003, 26-05-2024
-

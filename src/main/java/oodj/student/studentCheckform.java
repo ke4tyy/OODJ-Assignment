@@ -21,10 +21,10 @@ public class studentCheckform extends javax.swing.JFrame {
      * Creates new form studentCheckform
      */
     public studentCheckform(String id ,String proj, String date, String grade) {
-
-        
         initComponents();
-               
+        setLocationRelativeTo(null);    
+        setVisible(true);
+        
         try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.submission))){
             String line;
             while ((line = reader.readLine()) != null) {
@@ -163,7 +163,6 @@ public class studentCheckform extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         studentMenu menu = new studentMenu();
-        menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

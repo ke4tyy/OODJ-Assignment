@@ -18,7 +18,8 @@ public class statusCheck extends javax.swing.JFrame {
      */
     public statusCheck() {
         initComponents();
-        this.setVisible(true);
+        setVisible(true);
+        setLocationRelativeTo(null);
     }
     public statusCheck(Boolean v, String phrase) {
         initComponents();
@@ -30,7 +31,8 @@ public class statusCheck extends javax.swing.JFrame {
         else {
             jLabel1.setText(phrase);
         }
-        this.setVisible(true);
+        setVisible(true);
+        setLocationRelativeTo(null);
     }
     public statusCheck(Boolean v) {
         initComponents();
@@ -41,7 +43,8 @@ public class statusCheck extends javax.swing.JFrame {
         else {
             jLabel1.setText("input error.");
         }
-        this.setVisible(true);
+        setVisible(true);
+        setLocationRelativeTo(null);
     }
 
     /**

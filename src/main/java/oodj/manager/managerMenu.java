@@ -4,7 +4,6 @@
  */
 package oodj.manager;
 
-import java.awt.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -17,7 +16,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import oodj.assignment.*;
 import oodj.login.loginselection;
@@ -30,21 +28,24 @@ public class managerMenu extends userAttribute {
     User man = new User();
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
-    public managerMenu() {
+    public managerMenu() {  
         initComponents();
         jLabel1.setText("Welcome back, " + man.userName + "!");
         assignSupervisor(createSup);
         assignedVar();
         addTableElement();
-
+        setLocationRelativeTo(null);    
+        setVisible(true);
     }
 
-    public managerMenu(String id, String name, String mail, String pw) {
+    public managerMenu(String id, String name, String mail, String pw) { 
         initComponents();
         jLabel1.setText("Welcome back, " + man.userName + "!");
         assignSupervisor(createSup);
         assignedVar();
         addTableElement();
+        setLocationRelativeTo(null);    
+        setVisible(true);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -694,7 +695,6 @@ public class managerMenu extends userAttribute {
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         loginselection log = new loginselection();
-        log.setVisible(true);
         dispose();
     }//GEN-LAST:event_logoutBtnActionPerformed
 
@@ -1082,7 +1082,8 @@ public class managerMenu extends userAttribute {
         try {
             BufferedReader project = new BufferedReader(new FileReader(Assignment.project));
             BufferedReader intake = new BufferedReader(new FileReader(Assignment.intake));
-            String line1, line2;                      
+            BufferedReader student = new BufferedReader(new FileReader(Assignment.student));
+            String line1, line2, line3;                      
             //project.txt
             while ((line1 = project.readLine()) != null) {
                 String[] proj = line1.split(", ");
@@ -1101,6 +1102,12 @@ public class managerMenu extends userAttribute {
                 enrIntake.addItem(intak[0]);
                 reportIntakeBox.addItem(intak[0]);
             }
+            
+            while ((line3 = student.readLine()) != null) {
+                String[] stud = line3.split(", ");
+                enrStudent.addItem(stud[0]);
+            }
+            
         }
         catch (IOException e) {
             e.printStackTrace();

@@ -19,6 +19,8 @@ public class loginselection extends userAttribute {
     
     public loginselection() {
         initComponents();
+        setLocationRelativeTo(null);    
+        setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -220,19 +222,16 @@ public class loginselection extends userAttribute {
                         switch (role) {
                             case "a":
                             adminMenu adm = new adminMenu(user[0], user[1], user[2], user[3]);
-                            adm.setVisible(true);
                             dispose();
                             break;
                             
                             case "l":
                             lecturerMenu lect = new lecturerMenu(user[0], user[1], user[2], user[3]);
                             dispose();
-                            lect.setVisible(true);
                             break;
                             
                             case "p":
                             managerMenu proj = new managerMenu(user[0], user[1], user[2], user[3]);
-                            proj.setVisible(true);
                             dispose();
                             break;
                         }
@@ -241,9 +240,7 @@ public class loginselection extends userAttribute {
                 }
             }
             if (!login) {
-                System.out.println("Invalid username/email or password");
-                invalid panel = new invalid();
-                panel.setVisible(true);
+                new statusCheck(false, "invalid username or password");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -282,16 +279,13 @@ public class loginselection extends userAttribute {
                         login = true;
                         studentMenu stud = new studentMenu(user[0], user[1], user[2], user[3], user[4]);
                         dispose();
-                        stud.setVisible(true);
                         break;
                     }
                 }
             }
 
             if (!login) {
-                System.out.println("Invalid username/email or password");
-                invalid panel = new invalid();
-                panel.setVisible(true);
+                new statusCheck(false, "invalid username / password");
             }
 
         } catch (IOException e) {

@@ -19,13 +19,15 @@ public class studentMenu extends userAttribute {
     public static String Intake;
     
     //declare
-    public studentMenu() {
+    public studentMenu() {   
         initComponents();
         jLabel1.setText("Welcome back, " + stud.studName + "!");
         assignedProj();
+        setLocationRelativeTo(null);    
+        setVisible(true);
     }
 
-    public studentMenu(String id, String name, String mail, String pass, String intake) {
+    public studentMenu(String id, String name, String mail, String pass, String intake) {  
         initComponents();
         Id = id;
         Name = name;
@@ -34,6 +36,8 @@ public class studentMenu extends userAttribute {
         Intake = intake; 
         jLabel1.setText("Welcome back, " + stud.studName + "!");
         assignedProj();
+        setLocationRelativeTo(null);    
+        setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -425,7 +429,6 @@ public class studentMenu extends userAttribute {
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         loginselection log = new loginselection();
-        log.setVisible(true);
         dispose();
     }//GEN-LAST:event_logoutBtnActionPerformed
 
@@ -471,6 +474,7 @@ public class studentMenu extends userAttribute {
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void editProjBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProjBoxActionPerformed
+        linkTxt.setText(null);
         try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.submission))){
             String line;
             while ((line = reader.readLine()) != null) {
@@ -503,8 +507,12 @@ public class studentMenu extends userAttribute {
                     if (col[0].equals(stud.studID) && col[1].equals(editProjBox.getSelectedItem())) {
                         col[3] = linkTxt.getText();
                         col[2] = date;
+                        build.append(String.join(", ", col)).append("\n");
                     }
-                    build.append(String.join(", ", col)).append("\n");
+                    else {
+                        new statusCheck(false, "you have no submission of this project yet.");
+                    }
+
                 }
                 reader.close();
 
@@ -612,7 +620,6 @@ public class studentMenu extends userAttribute {
                     if (sub[0].equals(stud.studID) && sub[1].equals(checkProjBox.getSelectedItem())) {
 
                         studentCheckform form = new studentCheckform(sub[0], sub[1], sub[3], sub[4]);
-                        form.setVisible(true);
                         submitted = true;
                         dispose();
                         break;
@@ -621,7 +628,7 @@ public class studentMenu extends userAttribute {
 
                 }
                 if (!submitted) {
-                    statusCheck error = new statusCheck(false, "You have not submitted!");
+                    new statusCheck(false, "You have not submitted!");
                 }
 
             }
@@ -652,10 +659,7 @@ public class studentMenu extends userAttribute {
                 } 
             }
             if (!atleast1) {
-                System.out.println("you have no ongoing assessment.");
-                loginselection log = new loginselection();
-                dispose();
-                log.setVisible(true);
+                new statusCheck(false, "there is no ongoing assignment");
             } 
         } 
         catch (IOException e) {

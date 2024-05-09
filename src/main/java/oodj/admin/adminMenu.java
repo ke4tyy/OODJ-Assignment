@@ -26,12 +26,16 @@ public class adminMenu extends userAttribute {
         initComponents();
         jLabel1.setText("Welcome back, " + adm.userName + "!");
         assignVar();
+        setLocationRelativeTo(null);    
+        setVisible(true);
     }
     
     public adminMenu(String id, String name, String mail, String pw) {
         initComponents();
         jLabel1.setText("welcome back, " + adm.userName + "!");
         assignVar();
+        setLocationRelativeTo(null);    
+        setVisible(true);
     }
 
     /**
@@ -797,9 +801,109 @@ public class adminMenu extends userAttribute {
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         loginselection log = new loginselection();
-        log.setVisible(true);
         dispose();
     }//GEN-LAST:event_logoutBtnActionPerformed
+
+    private void editAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editAdminBtnActionPerformed
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
+            StringBuilder build = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] col = line.split(", ");
+                if (col[0].equals(editAdBox.getSelectedItem())) {
+                    col[1] = editAdName.getText();
+                    col[2] = editAdMail.getText();
+                    col[3] = editAdPass.getText();
+                }
+                build.append(String.join(", ", col)).append("\n");
+            }
+            reader.close();
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user));
+            writer.write(build.toString());
+            writer.close();
+
+            new statusCheck(true, "editted successfully");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_editAdminBtnActionPerformed
+
+    private void editAdBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editAdBoxActionPerformed
+        String admID = (String) editAdBox.getSelectedItem();
+        try {
+            BufferedReader admin = new BufferedReader(new FileReader(Assignment.user));
+            String line;
+
+            while ((line = admin.readLine()) != null) {
+                String[] adm = line.split(", ");
+                if (adm[0].equals((admID))) {
+                    editAdName.setText(adm[1]);
+                    editAdMail.setText(adm[2]);
+                    editAdPass.setText(adm[3]);
+                    break;
+                }
+            }
+            admin.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_editAdBoxActionPerformed
+
+    private void editProjectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProjectBtnActionPerformed
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
+            StringBuilder build = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] col = line.split(", ");
+                if (col[0].equals(editProjBox.getSelectedItem())) {
+                    col[1] = editProjName.getText();
+                    col[2] = editProjMail.getText();
+                    col[3] = editProjPass.getText();
+                    if (jCheckBox3.isSelected()) {
+                        col[4] = "l";
+                    }
+                }
+                build.append(String.join(", ", col)).append("\n");
+            }
+            reader.close();
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user));
+            writer.write(build.toString());
+            writer.close();
+
+            new statusCheck(true, "editted successfully");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_editProjectBtnActionPerformed
+
+    private void editProjBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProjBoxActionPerformed
+        String lectID = (String) editProjBox.getSelectedItem();
+        try {
+            BufferedReader project = new BufferedReader(new FileReader(Assignment.user));
+            String line;
+
+            while ((line = project.readLine()) != null) {
+                String[] proj = line.split(", ");
+                if (proj[0].equals((lectID))) {
+                    editProjName.setText(proj[1]);
+                    editProjMail.setText(proj[2]);
+                    editProjPass.setText(proj[3]);
+                    break;
+                }
+            }
+            project.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_editProjBoxActionPerformed
 
     private void editLecturerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editLecturerBtnActionPerformed
         try {
@@ -848,7 +952,7 @@ public class adminMenu extends userAttribute {
         catch (IOException e) {
             e.printStackTrace();
         }
-        
+
     }//GEN-LAST:event_editLectBoxActionPerformed
 
     private void editStudentBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editStudentBoxActionPerformed
@@ -975,7 +1079,6 @@ public class adminMenu extends userAttribute {
         catch (IOException e) {
             e.printStackTrace();
         }
-
     }//GEN-LAST:event_assignButtonActionPerformed
 
     private void studRegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studRegisterBtnActionPerformed
@@ -1094,107 +1197,6 @@ public class adminMenu extends userAttribute {
             e.printStackTrace();
         }
     }//GEN-LAST:event_lectRegisterBtnActionPerformed
-
-    private void editProjBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProjBoxActionPerformed
-        String lectID = (String) editProjBox.getSelectedItem();
-        try {
-            BufferedReader project = new BufferedReader(new FileReader(Assignment.user));
-            String line;
-
-            while ((line = project.readLine()) != null) {
-                String[] proj = line.split(", ");
-                if (proj[0].equals((lectID))) {
-                    editProjName.setText(proj[1]);
-                    editProjMail.setText(proj[2]);
-                    editProjPass.setText(proj[3]);
-                    break;
-                }
-            }
-            project.close();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_editProjBoxActionPerformed
-
-    private void editProjectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProjectBtnActionPerformed
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
-            StringBuilder build = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] col = line.split(", ");
-                if (col[0].equals(editProjBox.getSelectedItem())) {
-                    col[1] = editProjName.getText();
-                    col[2] = editProjMail.getText();
-                    col[3] = editProjPass.getText();
-                    if (jCheckBox3.isSelected()) {
-                        col[4] = "l";
-                    }
-                }
-                build.append(String.join(", ", col)).append("\n");
-            }
-            reader.close();
-
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user));
-            writer.write(build.toString());
-            writer.close();
-
-            new statusCheck(true, "editted successfully");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_editProjectBtnActionPerformed
-
-    private void editAdBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editAdBoxActionPerformed
-        String admID = (String) editAdBox.getSelectedItem();
-        try {
-            BufferedReader admin = new BufferedReader(new FileReader(Assignment.user));
-            String line;
-
-            while ((line = admin.readLine()) != null) {
-                String[] adm = line.split(", ");
-                if (adm[0].equals((admID))) {
-                    editAdName.setText(adm[1]);
-                    editAdMail.setText(adm[2]);
-                    editAdPass.setText(adm[3]);
-                    break;
-                }
-            }
-            admin.close();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_editAdBoxActionPerformed
-
-    private void editAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editAdminBtnActionPerformed
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
-            StringBuilder build = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] col = line.split(", ");
-                if (col[0].equals(editAdBox.getSelectedItem())) {
-                    col[1] = editAdName.getText();
-                    col[2] = editAdMail.getText();
-                    col[3] = editAdPass.getText();
-                }
-                build.append(String.join(", ", col)).append("\n");
-            }
-            reader.close();
-
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user));
-            writer.write(build.toString());
-            writer.close();
-
-            new statusCheck(true, "editted successfully");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_editAdminBtnActionPerformed
 
     private void assignVar() {
         try {
