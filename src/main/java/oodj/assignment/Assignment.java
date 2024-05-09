@@ -4,10 +4,6 @@ package oodj.assignment;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-
-
-import oodj.login.loginselection;
-
 /**
  *
  * @author User

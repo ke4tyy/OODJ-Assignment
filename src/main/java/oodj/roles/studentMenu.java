@@ -1,4 +1,5 @@
-package oodj.student;
+package oodj.roles;
+import oodj.roles.studentCheckform;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -8,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import oodj.assignment.*;
-import oodj.login.loginselection;
+import oodj.assignment.loginselection;
 
 public class studentMenu extends userAttribute {
     Student stud = new Student();

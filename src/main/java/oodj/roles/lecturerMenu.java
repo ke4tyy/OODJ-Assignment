@@ -1,5 +1,5 @@
 
-package oodj.lecturer;
+package oodj.roles;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JComboBox;
 import oodj.assignment.*;
-import oodj.login.loginselection;
+import oodj.assignment.loginselection;
 
 /**
  *
@@ -543,10 +543,11 @@ public class lecturerMenu extends userAttribute {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     String[] sub = line.split(", ");
-                    if (studEvalBox.getSelectedItem().equals("")) {
-                        statusCheck wrong = new statusCheck(false, "no one had submitted.");
+                    if (studEvalBox == null) {
+                        new statusCheck(false, "no one had submitted.");
+                        break;
                     }
-                    else if (sub[0].equals(studEvalBox.getSelectedItem().toString()) && sub[1].equals(projEvalBox.getSelectedItem().toString())) {
+                    else if (sub[0].equals(studEvalBox.getSelectedItem()) && sub[1].equals(projEvalBox.getSelectedItem())) {
                         evalMoodle.setText(sub[3]);
                     }
                 }
@@ -782,7 +783,7 @@ public class lecturerMenu extends userAttribute {
                 }
             }
             if (!atleast1) {
-                statusCheck check = new statusCheck(false, msg);
+                new statusCheck(false, msg);
                 targetBox.removeAllItems();
                 if (targetBox.equals(studEvalBox)) {
                     evalMoodle.setText("");

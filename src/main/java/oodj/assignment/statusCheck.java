@@ -4,7 +4,7 @@
  */
 package oodj.assignment;
 
-import oodj.lecturer.lecturerMenu;
+import oodj.roles.lecturerMenu;
 
 /**
  *

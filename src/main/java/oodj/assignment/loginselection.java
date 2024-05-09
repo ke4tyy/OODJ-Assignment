@@ -1,14 +1,14 @@
 
-package oodj.login;
+package oodj.assignment;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import oodj.admin.adminMenu;
+import oodj.roles.adminMenu;
 import oodj.assignment.*;
-import oodj.lecturer.lecturerMenu;
-import oodj.manager.managerMenu;
-import oodj.student.studentMenu;
+import oodj.roles.lecturerMenu;
+import oodj.roles.managerMenu;
+import oodj.roles.studentMenu;
 
 public class loginselection extends userAttribute {
     public static String id;
