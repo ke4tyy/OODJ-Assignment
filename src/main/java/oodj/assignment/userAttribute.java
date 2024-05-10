@@ -73,8 +73,8 @@ public abstract class userAttribute extends javax.swing.JFrame {
         String newPass = txt2.getText().trim();
         String cfmPass = txt3.getText().trim();
 
-        if (check.equals("") || newPass.equals("") || cfmPass.equals("")) {
-            statusCheck err = new statusCheck(false, "submission link cannot be empty!");
+        if (check.isEmpty() || newPass.isEmpty() || cfmPass.isEmpty()) {
+            new statusCheck("password cannot be empty!");
         }
         else {
             try {
@@ -93,10 +93,10 @@ public abstract class userAttribute extends javax.swing.JFrame {
                     BufferedWriter writer = new BufferedWriter(new FileWriter(file));
                     writer.write(combined.toString());
                     writer.close();
-                    statusCheck comp = new statusCheck(true);
+                    new statusCheck("Password Changed");
                 }
                 else {
-                    statusCheck error = new statusCheck(false, "credentials does not match.");
+                    new statusCheck("credentials does not match.");
                 }
 
             }

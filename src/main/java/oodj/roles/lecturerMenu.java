@@ -544,7 +544,7 @@ public class lecturerMenu extends userAttribute {
                 while ((line = reader.readLine()) != null) {
                     String[] sub = line.split(", ");
                     if (studEvalBox == null) {
-                        new statusCheck(false, "no one had submitted.");
+                        new statusCheck("no one had submitted.");
                         break;
                     }
                     else if (sub[0].equals(studEvalBox.getSelectedItem()) && sub[1].equals(projEvalBox.getSelectedItem())) {
@@ -578,7 +578,7 @@ public class lecturerMenu extends userAttribute {
             writer.write(build.toString());
             writer.close();
             
-            statusCheck check = new statusCheck(true);
+            new statusCheck("Graded");
             
         } catch (IOException e) {
             e.printStackTrace();
@@ -698,7 +698,7 @@ public class lecturerMenu extends userAttribute {
             writer.write(build.toString());
             writer.close();
 
-            statusCheck check = new statusCheck(true);
+            new statusCheck("Editted successfully");
 
             
         } catch (IOException e) {
@@ -706,7 +706,7 @@ public class lecturerMenu extends userAttribute {
         }
         
         catch (ParseException ex) {
-                statusCheck check = new statusCheck(false, "invalid date format");
+                new statusCheck("invalid date format");
         }
     }//GEN-LAST:event_editBtnActionPerformed
 
@@ -763,7 +763,7 @@ public class lecturerMenu extends userAttribute {
             writer.write(build.toString());
             writer.close();
             
-            statusCheck check = new statusCheck(true);
+            new statusCheck("completed");
         
         } 
         catch (IOException e) {
@@ -783,7 +783,7 @@ public class lecturerMenu extends userAttribute {
                 }
             }
             if (!atleast1) {
-                new statusCheck(false, msg);
+                new statusCheck(msg);
                 targetBox.removeAllItems();
                 if (targetBox.equals(studEvalBox)) {
                     evalMoodle.setText("");

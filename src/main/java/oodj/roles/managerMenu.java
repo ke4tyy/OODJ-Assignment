@@ -715,7 +715,7 @@ public class managerMenu extends userAttribute {
         String projID = "";    
         
         if (createProjTxt.getText().isEmpty() || createSup.getSelectedItem() == null || createSecond.getSelectedItem() == null ) {
-            statusCheck err = new statusCheck(false, "Project variables cannot be empty!"); 
+            new statusCheck("Project variables cannot be empty!"); 
         }
         else {
             try {
@@ -734,7 +734,7 @@ public class managerMenu extends userAttribute {
                         projID = "P" + String.format("%03d", temp);
                         if (proj.length >= 3 && proj[1].equals(projName) && proj[2].equals(projCat)) {
                             valid = false;
-                            statusCheck err = new statusCheck(false, "There is already an existing project with this name.");
+                            new statusCheck("There is already an existing project with this name.");
                             break;
                     }
                     }
@@ -748,7 +748,7 @@ public class managerMenu extends userAttribute {
                     
                     writer.close();
                     
-                    statusCheck complete = new statusCheck(true, "Project Created");
+                    new statusCheck("Project Created");
                 }
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
@@ -769,7 +769,7 @@ public class managerMenu extends userAttribute {
 
         
         if (editProjTxt.getText().isEmpty() || editSup.getSelectedItem() == null || editSecond.getSelectedItem() == null ) {
-            statusCheck err = new statusCheck(false, "Project variables cannot be empty!"); 
+            new statusCheck("Project variables cannot be empty!"); 
         }
         else {
             try {
@@ -801,7 +801,7 @@ public class managerMenu extends userAttribute {
                 writer.write(build.toString());
                 writer.close();
                 
-                statusCheck check = new statusCheck(true, "edited successfully");
+                new statusCheck("edited successfully");
                 
             } catch (IOException ex) {
                 ex.printStackTrace();
@@ -857,7 +857,7 @@ public class managerMenu extends userAttribute {
                 String[] comp = line.split(", ");
                 temp = comp[0] + ", " + comp[1];
                 if (temp.equals(check)) {
-                    statusCheck err = new statusCheck(false, "Project is already assigned to this student");
+                    new statusCheck("Project is already assigned to this student");
                     valid = false;
                 }
             }
@@ -868,7 +868,7 @@ public class managerMenu extends userAttribute {
                 writer.write(check + ", " + null + ", " + null);
                 writer.newLine();
                 writer.close();
-                statusCheck done = new statusCheck(true, "assigned successfully");
+                new statusCheck("assigned successfully");
             }
             
         
@@ -909,7 +909,7 @@ public class managerMenu extends userAttribute {
                     String[] assess = line.split(", ");
                     temp2 = assess.length > 1 ? assess[0] + ", " + assess[1] : "";
                     if (temp.equals(temp2)) {
-                        statusCheck err = new statusCheck(false, "Some students in the intake are enrolled into this project");
+                        new statusCheck("Some students in the intake are enrolled into this project");
                         v = false;
                     }
                 }    
@@ -925,11 +925,11 @@ public class managerMenu extends userAttribute {
                     write.write(combine);
                     write.newLine();
                 }
-                statusCheck done = new statusCheck(true, "enrolled successfully");
+                new statusCheck("enrolled successfully");
                 write.close();
             }
             else {
-                statusCheck err = new statusCheck(false, "intake contains less than 2 students");
+                new statusCheck("intake contains less than 2 students");
             }
 
             

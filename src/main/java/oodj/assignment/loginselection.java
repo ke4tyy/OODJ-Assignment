@@ -240,7 +240,7 @@ public class loginselection extends userAttribute {
                 }
             }
             if (!login) {
-                new statusCheck(false, "invalid username or password");
+                new statusCheck("invalid username or password");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -285,7 +285,7 @@ public class loginselection extends userAttribute {
             }
 
             if (!login) {
-                new statusCheck(false, "invalid username / password");
+                new statusCheck("invalid username / password");
             }
 
         } catch (IOException e) {

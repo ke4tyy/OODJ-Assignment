@@ -10,6 +10,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.JComboBox;
+import javax.swing.JTextPane;
 import oodj.assignment.*;
 import oodj.assignment.loginselection;
 
@@ -50,8 +52,22 @@ public class adminMenu extends userAttribute {
         jLabel1 = new javax.swing.JLabel();
         logoutBtn = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jPanel11 = new javax.swing.JPanel();
+        studMail = new javax.swing.JTextPane();
+        studPass = new javax.swing.JTextPane();
+        studIntakeBox = new javax.swing.JComboBox<>();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        studName = new javax.swing.JTextPane();
+        studRegisterBtn = new javax.swing.JButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jPanel14 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -61,32 +77,16 @@ public class adminMenu extends userAttribute {
         lectName = new javax.swing.JTextPane();
         jCheckBox2 = new javax.swing.JCheckBox();
         jLabel13 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        studName = new javax.swing.JTextPane();
-        studMail = new javax.swing.JTextPane();
-        studPass = new javax.swing.JTextPane();
-        studIntakeBox = new javax.swing.JComboBox<>();
-        studRegisterBtn = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        assignLBox = new javax.swing.JComboBox<>();
-        assignButton = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         adName = new javax.swing.JTextPane();
         adMail = new javax.swing.JTextPane();
         adPass = new javax.swing.JTextPane();
         adRegisterBtn = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
@@ -145,6 +145,40 @@ public class adminMenu extends userAttribute {
         jLabel35 = new javax.swing.JLabel();
         jScrollPane12 = new javax.swing.JScrollPane();
         editAdPass = new javax.swing.JTextPane();
+        jPanel1 = new javax.swing.JPanel();
+        jTabbedPane4 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        deleteStudentBox = new javax.swing.JComboBox<>();
+        deleteStudentBtn = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        deleteStudentName = new javax.swing.JLabel();
+        deleteStudentMail = new javax.swing.JLabel();
+        deleteStudentIntake = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        deleteLectBox = new javax.swing.JComboBox<>();
+        deleteLectBtn = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        deleteLectMail = new javax.swing.JLabel();
+        deleteLectName = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        deleteAdminName = new javax.swing.JLabel();
+        deleteAdminMail = new javax.swing.JLabel();
+        deleteAdminBtn = new javax.swing.JButton();
+        deleteAdminBox = new javax.swing.JComboBox<>();
+        jLabel43 = new javax.swing.JLabel();
+        DeleteLectRole = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        assignLBox = new javax.swing.JComboBox<>();
+        assignButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -158,7 +192,92 @@ public class adminMenu extends userAttribute {
             }
         });
 
-        jLabel9.setText("Enter Lecturer Password :");
+        jLabel48.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel48.setText("Note : Student ID will automatically be assigned");
+
+        jLabel49.setText("Enter Student Name :");
+
+        jLabel50.setText("Enter Student Email :");
+
+        jLabel51.setText("Enter Student Password :");
+
+        jLabel52.setText("Select Intake :");
+
+        jLabel53.setText("without intake? ");
+
+        studRegisterBtn.setText("Register");
+        studRegisterBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studRegisterBtnActionPerformed(evt);
+            }
+        });
+
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addComponent(jLabel48))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel50)
+                            .addComponent(jLabel51)
+                            .addComponent(jLabel53)
+                            .addComponent(jLabel52)
+                            .addComponent(jLabel49))
+                        .addGap(32, 32, 32)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(studMail, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
+                            .addComponent(studName, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
+                            .addComponent(studPass, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
+                            .addComponent(studIntakeBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addComponent(studRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(112, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addComponent(jLabel48)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel49)
+                    .addComponent(studName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel50)
+                    .addComponent(studMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel51)
+                    .addComponent(studPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel53)
+                    .addComponent(jCheckBox1))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel52)
+                    .addComponent(studIntakeBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(studRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(78, Short.MAX_VALUE))
+        );
+
+        jTabbedPane3.addTab("Student", jPanel11);
 
         jLabel10.setText("Enter Lecturer Email :");
 
@@ -182,186 +301,66 @@ public class adminMenu extends userAttribute {
 
         jLabel13.setText("Project Manager?");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        jLabel9.setText("Enter Lecturer Password :");
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
                         .addGap(91, 91, 91)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel10)
                             .addComponent(jLabel9)
                             .addComponent(jLabel13)
                             .addComponent(jLabel12))
                         .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jCheckBox2)
                             .addComponent(lectMail, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
                             .addComponent(lectName, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
                             .addComponent(lectPass, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel14Layout.createSequentialGroup()
                         .addGap(191, 191, 191)
                         .addComponent(jLabel11))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel14Layout.createSequentialGroup()
                         .addGap(239, 239, 239)
                         .addComponent(lectRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(110, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
                     .addComponent(lectName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
                     .addComponent(lectMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(lectPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
                     .addComponent(jCheckBox2))
                 .addGap(50, 50, 50)
                 .addComponent(lectRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Register Lecturers", jPanel1);
+        jTabbedPane3.addTab("Lecturer", jPanel14);
 
-        jLabel2.setText("Enter Student Name :");
+        jLabel17.setText("Enter Admin Email :");
 
-        jLabel3.setText("Enter Student Email :");
-
-        jLabel4.setText("Enter Student Password :");
-
-        jLabel5.setText("Select Intake :");
-
-        jLabel6.setText("without intake? ");
-
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-
-        studRegisterBtn.setText("Register");
-        studRegisterBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                studRegisterBtnActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel7.setText("Note : Student ID will automatically be assigned");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel2))
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jCheckBox1)
-                            .addComponent(studMail, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
-                            .addComponent(studName, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
-                            .addComponent(studPass, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
-                            .addComponent(studIntakeBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(191, 191, 191)
-                        .addComponent(jLabel7)))
-                .addContainerGap(112, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(studRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(234, 234, 234))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(studName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(studMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(studPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jCheckBox1))
-                .addGap(23, 23, 23)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(studIntakeBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                .addComponent(studRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51))
-        );
-
-        jTabbedPane1.addTab("Register Students", jPanel2);
-
-        jLabel8.setText("Select lecturer : ");
-
-        assignButton.setText("Assign");
-        assignButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(159, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(78, 78, 78)
-                .addComponent(assignLBox, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(158, 158, 158))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(248, 248, 248)
-                .addComponent(assignButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(assignLBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addGap(75, 75, 75)
-                .addComponent(assignButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(163, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Assign Project Manager", jPanel5);
+        jLabel18.setText("Enter Admin Password :");
 
         adRegisterBtn.setText("Register");
         adRegisterBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -375,58 +374,67 @@ public class adminMenu extends userAttribute {
         jLabel16.setForeground(new java.awt.Color(102, 102, 102));
         jLabel16.setText("Note : admin ID will automatically be assigned");
 
-        jLabel17.setText("Enter Admin Email :");
-
-        jLabel18.setText("Enter Admin Password :");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGap(91, 91, 91)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel17)
                             .addComponent(jLabel18)
                             .addComponent(jLabel15))
                         .addGap(32, 32, 32)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(adMail, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
                             .addComponent(adName, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
                             .addComponent(adPass, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGap(191, 191, 191)
                         .addComponent(jLabel16))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGap(239, 239, 239)
                         .addComponent(adRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(117, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15)
                     .addComponent(adName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17)
                     .addComponent(adMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel18)
                     .addComponent(adPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(92, 92, 92)
                 .addComponent(adRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Register Admins", jPanel6);
+        jTabbedPane3.addTab("Admin", jPanel15);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane3, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane3)
+        );
+
+        jTabbedPane1.addTab("Register", jPanel4);
 
         jScrollPane2.setViewportView(editStudMail);
 
@@ -481,7 +489,7 @@ public class adminMenu extends userAttribute {
                             .addComponent(jScrollPane2)
                             .addComponent(jScrollPane3)
                             .addComponent(editSIntBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -562,7 +570,7 @@ public class adminMenu extends userAttribute {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(243, 243, 243)
                         .addComponent(editLecturerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -643,7 +651,7 @@ public class adminMenu extends userAttribute {
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(243, 243, 243)
                         .addComponent(editProjectBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -668,7 +676,7 @@ public class adminMenu extends userAttribute {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
                     .addComponent(jCheckBox3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(editProjectBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
         );
@@ -724,7 +732,7 @@ public class adminMenu extends userAttribute {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(243, 243, 243)
                         .addComponent(editAdminBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -756,17 +764,280 @@ public class adminMenu extends userAttribute {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jTabbedPane2)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jTabbedPane1.addTab("Edit Details", jPanel7);
+
+        jLabel2.setText("Select Student :");
+
+        deleteStudentBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteStudentBoxActionPerformed(evt);
+            }
+        });
+
+        deleteStudentBtn.setText("Delete");
+        deleteStudentBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteStudentBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Name :");
+
+        jLabel7.setText("Email :");
+
+        jLabel36.setText("Intake :");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(255, 255, 255)
+                .addComponent(deleteStudentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(133, 133, 133)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel36)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(deleteStudentName, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                    .addComponent(deleteStudentMail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(deleteStudentIntake, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(deleteStudentBox, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(85, 85, 85))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(deleteStudentBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(deleteStudentName, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7))
+                    .addComponent(deleteStudentMail, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel36)
+                    .addComponent(deleteStudentIntake, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addComponent(deleteStudentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57))
+        );
+
+        jTabbedPane4.addTab("Student", jPanel2);
+
+        jLabel3.setText("Select Lecturer :");
+
+        deleteLectBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteLectBoxActionPerformed(evt);
+            }
+        });
+
+        deleteLectBtn.setText("Delete");
+        deleteLectBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteLectBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Role :");
+
+        jLabel37.setText("Email :");
+
+        jLabel38.setText("Name :");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(133, 133, 133)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(deleteLectBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(269, 269, 269))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel37)
+                            .addComponent(jLabel38))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deleteLectBox, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(deleteLectName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(deleteLectMail, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(92, 92, 92))))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(deleteLectBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel38)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel37))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(deleteLectName, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))
+                    .addComponent(deleteLectMail, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addComponent(deleteLectBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(97, Short.MAX_VALUE))
+        );
+
+        jTabbedPane4.addTab("Lecturer & Project Manager", jPanel6);
+
+        jLabel39.setText("Name :");
+
+        jLabel40.setText("Email :");
+
+        deleteAdminBtn.setText("Delete");
+        deleteAdminBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteAdminBtnActionPerformed(evt);
+            }
+        });
+
+        deleteAdminBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteAdminBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel43.setText("Select Admin :");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(133, 133, 133)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(deleteAdminBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(269, 269, 269))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel43)
+                            .addComponent(jLabel40)
+                            .addComponent(jLabel39))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(deleteAdminBox, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(deleteAdminName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(deleteAdminMail, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(92, 92, 92))))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel43)
+                    .addComponent(deleteAdminBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addComponent(jLabel39)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel40))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addComponent(deleteAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))
+                    .addComponent(deleteAdminMail, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(78, 78, 78)
+                .addComponent(deleteAdminBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(97, Short.MAX_VALUE))
+        );
+
+        jTabbedPane4.addTab("Admin", jPanel13);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane4)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jTabbedPane4)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Delete", jPanel1);
+
+        jLabel8.setText("Select lecturer : ");
+
+        assignButton.setText("Assign");
+        assignButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assignButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout DeleteLectRoleLayout = new javax.swing.GroupLayout(DeleteLectRole);
+        DeleteLectRole.setLayout(DeleteLectRoleLayout);
+        DeleteLectRoleLayout.setHorizontalGroup(
+            DeleteLectRoleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DeleteLectRoleLayout.createSequentialGroup()
+                .addContainerGap(159, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addGap(78, 78, 78)
+                .addComponent(assignLBox, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(158, 158, 158))
+            .addGroup(DeleteLectRoleLayout.createSequentialGroup()
+                .addGap(248, 248, 248)
+                .addComponent(assignButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        DeleteLectRoleLayout.setVerticalGroup(
+            DeleteLectRoleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DeleteLectRoleLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addGroup(DeleteLectRoleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(assignLBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addGap(75, 75, 75)
+                .addComponent(assignButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(163, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Assign Project Manager", DeleteLectRole);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -804,31 +1075,107 @@ public class adminMenu extends userAttribute {
         dispose();
     }//GEN-LAST:event_logoutBtnActionPerformed
 
-    private void editAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editAdminBtnActionPerformed
+    private void adRegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adRegisterBtnActionPerformed
+        String name = adName.getText();
+        String mail = adMail.getText();
+        String pass = adPass.getText();
+
         try {
             BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
-            StringBuilder build = new StringBuilder();
             String line;
+            ArrayList<Integer> id = new ArrayList<>();
+
             while ((line = reader.readLine()) != null) {
-                String[] col = line.split(", ");
-                if (col[0].equals(editAdBox.getSelectedItem())) {
-                    col[1] = editAdName.getText();
-                    col[2] = editAdMail.getText();
-                    col[3] = editAdPass.getText();
+                String[] admin = line.split(", ");
+                if (name.isEmpty() || mail.isEmpty() || pass.isEmpty()) {
+                    new statusCheck("credentials cannot be empty");
+                    return;
                 }
-                build.append(String.join(", ", col)).append("\n");
+                else if (mail.equals(admin[2])) {
+                    new statusCheck("email exists within the system");
+                    return;
+                }
+                else {
+                    id.add(Integer.parseInt(admin[0]));
+                }
             }
-            reader.close();
+            int maxID = 0;
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user));
-            writer.write(build.toString());
+            for (int i : id) {
+                if (i > maxID) {
+                    maxID = i;
+                }
+            }
+            int finalID = maxID + 1;
+
+            String newLine = String.format("%06d, %s, %s, %s, a", finalID, name, mail, pass);
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user, true));
+            writer.write(newLine);
+            writer.newLine();
             writer.close();
-
-            new statusCheck(true, "editted successfully");
+            new statusCheck("admin registered.");
         }
         catch (IOException e) {
             e.printStackTrace();
         }
+    }//GEN-LAST:event_adRegisterBtnActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
+
+    private void lectRegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lectRegisterBtnActionPerformed
+        String name = lectName.getText();
+        String mail = lectMail.getText();
+        String pass = lectPass.getText();
+        String role = "l";
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
+            String line;
+            ArrayList<Integer> id = new ArrayList<>();
+
+            while ((line = reader.readLine()) != null) {
+                String[] lecturer = line.split(", ");
+                if (name.isEmpty() || mail.isEmpty() || pass.isEmpty()) {
+                    new statusCheck("credentials cannot be empty");
+                    return;
+                }
+                else if (name.toLowerCase().equals(lecturer[1].toLowerCase()) || mail.equals(lecturer[2])) {
+                    new statusCheck("this name / email exists within the system");
+                    return;
+                }
+                else {
+                    id.add(Integer.parseInt(lecturer[0]));
+                }
+            }
+            int maxID = 0;
+
+            for (int i : id) {
+                if (i > maxID) {
+                    maxID = i;
+                }
+            }
+            int finalID = maxID + 1;
+            if (jCheckBox2.isSelected()) {
+                role = "p";
+            }
+            String newLine = String.format("%06d, %s, %s, %s, %s", finalID, name, mail, pass, role);
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user, true));
+            writer.write(newLine);
+            writer.newLine();
+            writer.close();
+            new statusCheck("lecturer registered.");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_lectRegisterBtnActionPerformed
+
+    private void editAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editAdminBtnActionPerformed
+        editCred(editAdBox, Assignment.user, editAdName, editAdMail, editAdPass, editSIntBox, "a");
     }//GEN-LAST:event_editAdminBtnActionPerformed
 
     private void editAdBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editAdBoxActionPerformed
@@ -854,33 +1201,7 @@ public class adminMenu extends userAttribute {
     }//GEN-LAST:event_editAdBoxActionPerformed
 
     private void editProjectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProjectBtnActionPerformed
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
-            StringBuilder build = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] col = line.split(", ");
-                if (col[0].equals(editProjBox.getSelectedItem())) {
-                    col[1] = editProjName.getText();
-                    col[2] = editProjMail.getText();
-                    col[3] = editProjPass.getText();
-                    if (jCheckBox3.isSelected()) {
-                        col[4] = "l";
-                    }
-                }
-                build.append(String.join(", ", col)).append("\n");
-            }
-            reader.close();
-
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user));
-            writer.write(build.toString());
-            writer.close();
-
-            new statusCheck(true, "editted successfully");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        editCred(editProjBox, Assignment.user, editProjName, editProjMail, editProjPass, editSIntBox, "p");
     }//GEN-LAST:event_editProjectBtnActionPerformed
 
     private void editProjBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProjBoxActionPerformed
@@ -906,30 +1227,7 @@ public class adminMenu extends userAttribute {
     }//GEN-LAST:event_editProjBoxActionPerformed
 
     private void editLecturerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editLecturerBtnActionPerformed
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
-            StringBuilder build = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] col = line.split(", ");
-                if (col[0].equals(editLectBox.getSelectedItem())) {
-                    col[1] = editLectName.getText();
-                    col[2] = editLectMail.getText();
-                    col[3] = editLectPass.getText();
-                }
-                build.append(String.join(", ", col)).append("\n");
-            }
-            reader.close();
-
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user));
-            writer.write(build.toString());
-            writer.close();
-
-            new statusCheck(true, "editted successfully");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        editCred(editLectBox, Assignment.user, editLectName, editLectMail, editLectPass, editSIntBox, "l");
     }//GEN-LAST:event_editLecturerBtnActionPerformed
 
     private void editLectBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editLectBoxActionPerformed
@@ -952,7 +1250,6 @@ public class adminMenu extends userAttribute {
         catch (IOException e) {
             e.printStackTrace();
         }
-
     }//GEN-LAST:event_editLectBoxActionPerformed
 
     private void editStudentBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editStudentBoxActionPerformed
@@ -979,80 +1276,8 @@ public class adminMenu extends userAttribute {
     }//GEN-LAST:event_editStudentBoxActionPerformed
 
     private void editStudentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editStudentBtnActionPerformed
-
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(Assignment.student));
-            StringBuilder build = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] col = line.split(", ");
-                if (col[0].equals(editStudentBox.getSelectedItem())) {
-                    col[1] = editStudName.getText();
-                    col[2] = editStudMail.getText();
-                    col[3] = editStudPass.getText();
-                    col[4] = (String) editSIntBox.getSelectedItem();
-                }
-                build.append(String.join(", ", col)).append("\n");
-            }
-            reader.close();
-
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.student));
-            writer.write(build.toString());
-            writer.close();
-
-            new statusCheck(true, "editted successfully");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        editCred(editStudentBox, Assignment.student, editStudName, editStudMail, editStudPass, editSIntBox, "s");
     }//GEN-LAST:event_editStudentBtnActionPerformed
-
-    private void adRegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adRegisterBtnActionPerformed
-        String name = adName.getText();
-        String mail = adMail.getText();
-        String pass = adPass.getText();
-        String role = "l";
-
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
-            String line;
-            ArrayList<Integer> id = new ArrayList<>();
-
-            while ((line = reader.readLine()) != null) {
-                String[] admin = line.split(", ");
-                if (name.isEmpty() || mail.isEmpty() || pass.isEmpty()) {
-                    statusCheck err = new statusCheck(false, "credentials cannot be empty");
-                    return;
-                }
-                else if (name.toLowerCase().equals(admin[1].toLowerCase()) || mail.equals(admin[2])) {
-                    statusCheck err = new statusCheck(false, "this name / email exists within the system");
-                    return;
-                }
-                else {
-                    id.add(Integer.parseInt(admin[0]));
-                }
-            }
-            int maxID = 0;
-
-            for (int i : id) {
-                if (i > maxID) {
-                    maxID = i;
-                }
-            }
-            int finalID = maxID + 1;
-
-            String newLine = String.format("%06d, %s, %s, %s, a", finalID, name, mail, pass );
-
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user, true));
-            writer.write(newLine);
-            writer.newLine();
-            writer.close();
-            statusCheck done = new statusCheck(true, "admin registered.");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_adRegisterBtnActionPerformed
 
     private void assignButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignButtonActionPerformed
         String lectID = (String) assignLBox.getSelectedItem();
@@ -1074,18 +1299,153 @@ public class adminMenu extends userAttribute {
             writer.write(builder.toString());
             writer.close();
 
-            new statusCheck(true, "role changed successfully");
+            new statusCheck("role changed successfully");
         }
         catch (IOException e) {
             e.printStackTrace();
         }
     }//GEN-LAST:event_assignButtonActionPerformed
 
+    private void deleteLectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteLectBtnActionPerformed
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
+            StringBuilder builder = new StringBuilder();
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] lect = line.split(", ");
+                if (! lect[0].equals(deleteLectBox.getSelectedItem())) {
+                    builder.append(line).append("\n");
+                }
+            }
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user));
+            writer.write(builder.toString());
+            writer.close();
+            new statusCheck("User deleted successfully");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_deleteLectBtnActionPerformed
+
+    private void deleteLectBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteLectBoxActionPerformed
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] role = line.split(", ");
+                if (role[0].equals(deleteLectBox.getSelectedItem())) {
+                    deleteLectName.setText(role[0]);
+                    deleteLectMail.setText(role[2]);
+
+                    if (role[4].equals("l")) {
+                        jLabel5.setText("Lecturer");
+                    }
+                    else if (role[4].equals("p")) {
+                        jLabel5.setText("Project Manager");
+                    }
+                }
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_deleteLectBoxActionPerformed
+
+    private void deleteStudentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStudentBtnActionPerformed
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.student));
+            StringBuilder builder = new StringBuilder();
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] stud = line.split(", ");
+                if (! stud[0].equals(deleteStudentBox.getSelectedItem())) {
+                    builder.append(line).append("\n");
+                }
+            }
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.student));
+            writer.write(builder.toString());
+            writer.close();
+            new statusCheck("Student deleted successfully");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_deleteStudentBtnActionPerformed
+
+    private void deleteStudentBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStudentBoxActionPerformed
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.student));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] user = line.split(", ");
+                if (user[0].equals(deleteStudentBox.getSelectedItem())) {
+                    deleteStudentName.setText(user[1]);
+                    deleteStudentMail.setText(user[2]);
+                    deleteStudentIntake.setText(user[4]);
+                    break;
+                }
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_deleteStudentBoxActionPerformed
+
+    private void deleteAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAdminBtnActionPerformed
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
+            StringBuilder builder = new StringBuilder();
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] user = line.split(", ");
+                if (! user[0].equals(deleteAdminBox.getSelectedItem())) {
+                    builder.append(line).append("\n");
+                }
+            }
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user));
+            writer.write(builder.toString());
+            writer.close();
+            new statusCheck("User deleted successfully");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_deleteAdminBtnActionPerformed
+
+    private void deleteAdminBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAdminBoxActionPerformed
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] user = line.split(", ");
+                if (user[0].equals(deleteAdminBox.getSelectedItem())) {
+                    deleteAdminName.setText(user[1]);
+                    deleteAdminMail.setText(user[2]);
+
+                    break;
+                }
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_deleteAdminBoxActionPerformed
+
     private void studRegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studRegisterBtnActionPerformed
         String name = studName.getText();
         String mail = studMail.getText();
         String pass = studPass.getText();
         String intake = (String) studIntakeBox.getSelectedItem();
+        
+        if (jCheckBox1.isSelected()) {
+            intake = null;
+        }
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(Assignment.student));
@@ -1095,11 +1455,11 @@ public class adminMenu extends userAttribute {
             while ((line = reader.readLine()) != null) {
                 String[] student = line.split(", ");
                 if (name.isEmpty() || mail.isEmpty() || pass.isEmpty()) {
-                    statusCheck err = new statusCheck(false, "credentials cannot be empty");
+                    new statusCheck("credentials cannot be empty");
                     return;
                 }
-                else if (name.toLowerCase().equals(student[1].toLowerCase()) || mail.equals(student[2])) {
-                    statusCheck err = new statusCheck(false, "this student exists with the inserted email / name");
+                else if (mail.equals(student[2])) {
+                    new statusCheck("this email exists within the system");
                     return;
                 }
                 else {
@@ -1114,14 +1474,14 @@ public class adminMenu extends userAttribute {
                 }
             }
             int finalID = maxID + 1;
-
+            
             String newLine = String.format("%06d, %s, %s, %s, %s", finalID, name, mail, pass, intake);
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.student, true));
             writer.write(newLine);
             writer.newLine();
             writer.close();
-            statusCheck done = new statusCheck(true, "student registered.");
+            new statusCheck("student registered.");
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -1129,74 +1489,8 @@ public class adminMenu extends userAttribute {
     }//GEN-LAST:event_studRegisterBtnActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        if (jCheckBox1.isSelected()) {
-            try {
-                BufferedReader reader = new BufferedReader(new FileReader(Assignment.intake));
-                String line;
-
-                while ((line = reader.readLine()) != null) {
-                    String[] intake = line.split(", ");
-                    studIntakeBox.addItem(intake[0]);
-                }
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
-
-    private void lectRegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lectRegisterBtnActionPerformed
-        String name = lectName.getText();
-        String mail = lectMail.getText();
-        String pass = lectPass.getText();
-        String role = "l";
-
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
-            String line;
-            ArrayList<Integer> id = new ArrayList<>();
-
-            while ((line = reader.readLine()) != null) {
-                String[] lecturer = line.split(", ");
-                if (name.isEmpty() || mail.isEmpty() || pass.isEmpty()) {
-                    statusCheck err = new statusCheck(false, "credentials cannot be empty");
-                    return;
-                }
-                else if (name.toLowerCase().equals(lecturer[1].toLowerCase()) || mail.equals(lecturer[2])) {
-                    statusCheck err = new statusCheck(false, "this name / email exists within the system");
-                    return;
-                }
-                else {
-                    id.add(Integer.parseInt(lecturer[0]));
-                }
-            }
-            int maxID = 0;
-
-            for (int i : id) {
-                if (i > maxID) {
-                    maxID = i;
-                }
-            }
-            int finalID = maxID + 1;
-            if (jCheckBox2.isSelected()) {
-                role = "p";
-            }
-            String newLine = String.format("%06d, %s, %s, %s, %s", finalID, name, mail, pass, role);
-
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user, true));
-            writer.write(newLine);
-            writer.newLine();
-            writer.close();
-            statusCheck done = new statusCheck(true, "lecturer registered.");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_lectRegisterBtnActionPerformed
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void assignVar() {
         try {
@@ -1209,12 +1503,15 @@ public class adminMenu extends userAttribute {
                 if (lec[4].equals("l")) {
                     assignLBox.addItem(lec[0]);
                     editLectBox.addItem(lec[0]);
+                    deleteLectBox.addItem(lec[0]);
                 }
                 else if (lec[4].equals("p")) {
                     editProjBox.addItem(lec[0]);
+                    deleteLectBox.addItem(lec[0]);
                 }
                 else if (lec[4].equals("a")) {
                     editAdBox.addItem(lec[0]);
+                    deleteAdminBox.addItem(lec[0]);
                 }
             }
             lecturer.close();
@@ -1226,15 +1523,18 @@ public class adminMenu extends userAttribute {
             while ((line2 = student.readLine()) != null) {
                 String[] stud = line2.split(", ");
                 editStudentBox.addItem(stud[0]);
+                deleteStudentBox.addItem(stud[0]);
             }
             student.close();
             
+            //intake
             BufferedReader intake = new BufferedReader(new FileReader(Assignment.intake));
             String line3;
 
             while ((line3 = intake.readLine()) != null) {
                 String[] inta = line3.split(", ");
                 editSIntBox.addItem(inta[0]);
+                studIntakeBox.addItem(inta[0]);
             }
             intake.close();
         }
@@ -1242,6 +1542,47 @@ public class adminMenu extends userAttribute {
             e.printStackTrace();
         }
     }
+    
+
+    
+    private void editCred(JComboBox <String> box, String filepath, JTextPane namefield, JTextPane mailfield, JTextPane passfield, JComboBox <String> intake, String type) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filepath));
+            StringBuilder build = new StringBuilder();
+            String line;
+            
+            while ((line = reader.readLine()) != null) {
+                String[] user = line.split(", ");
+                if (user[0].equals(box.getSelectedItem())) {
+                    user[1] = namefield.getText();
+                    user[2] = mailfield.getText();
+                    user[3] = passfield.getText();
+                    if(intake != null && type.equals("s")) {
+                        user[4] = (String) intake.getSelectedItem();
+                    }
+                    else if ((type.equals("p") && jCheckBox3.isSelected()) || type.equals("l")) {
+                        user[4] = "l";
+                    }
+                    else if (type.equals("a")) {
+                        user[4] = "a";
+                    }
+                    else if(type.equals("p")) {
+                        user[4] = "p";
+                    }
+                    
+                }
+                build.append(String.join(", ", user)).append("\n");
+            }
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filepath));
+            writer.write(build.toString());
+            writer.close();
+            new statusCheck("Editted successfully");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -1278,12 +1619,26 @@ public class adminMenu extends userAttribute {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel DeleteLectRole;
     private javax.swing.JTextPane adMail;
     private javax.swing.JTextPane adName;
     private javax.swing.JTextPane adPass;
     private javax.swing.JButton adRegisterBtn;
     private javax.swing.JButton assignButton;
     private javax.swing.JComboBox<String> assignLBox;
+    private javax.swing.JComboBox<String> deleteAdminBox;
+    private javax.swing.JButton deleteAdminBtn;
+    private javax.swing.JLabel deleteAdminMail;
+    private javax.swing.JLabel deleteAdminName;
+    private javax.swing.JComboBox<String> deleteLectBox;
+    private javax.swing.JButton deleteLectBtn;
+    private javax.swing.JLabel deleteLectMail;
+    private javax.swing.JLabel deleteLectName;
+    private javax.swing.JComboBox<String> deleteStudentBox;
+    private javax.swing.JButton deleteStudentBtn;
+    private javax.swing.JLabel deleteStudentIntake;
+    private javax.swing.JLabel deleteStudentMail;
+    private javax.swing.JLabel deleteStudentName;
     private javax.swing.JComboBox<String> editAdBox;
     private javax.swing.JTextPane editAdMail;
     private javax.swing.JTextPane editAdName;
@@ -1337,17 +1692,33 @@ public class adminMenu extends userAttribute {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -1366,6 +1737,8 @@ public class adminMenu extends userAttribute {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTextPane lectMail;
     private javax.swing.JTextPane lectName;
     private javax.swing.JTextPane lectPass;

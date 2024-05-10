@@ -454,11 +454,11 @@ public class studentMenu extends userAttribute {
             }
 
             if (hasDuplicate) {
-                statusCheck status = new statusCheck(false, "There is already an existing submission for this project!");
+                new statusCheck("There is already an existing submission for this project!");
             } else if (link.isEmpty()) {
-                statusCheck substatus = new statusCheck(false, "submission link cannot be empty!");
+                new statusCheck("submission link cannot be empty!");
             } else {
-                statusCheck substatus = new statusCheck(true);
+                new statusCheck("submitted");
 
                 String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.submission, true))) {
@@ -494,7 +494,7 @@ public class studentMenu extends userAttribute {
       
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         if (linkTxt.getText().equals("")) {
-            statusCheck sub = new statusCheck(false, "Submission link cannot be empty!");
+            new statusCheck("Submission link cannot be empty!");
         }
         else {
             try {
@@ -511,7 +511,7 @@ public class studentMenu extends userAttribute {
                         build.append(String.join(", ", col)).append("\n");
                     }
                     else {
-                        new statusCheck(false, "you have no submission of this project yet.");
+                        new statusCheck("you have no submission of this project yet.");
                     }
 
                 }
@@ -520,7 +520,7 @@ public class studentMenu extends userAttribute {
                 BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.submission));
                 writer.write(build.toString());
                 writer.close();
-                statusCheck sub = new statusCheck(true);
+                new statusCheck("editted");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -545,9 +545,9 @@ public class studentMenu extends userAttribute {
             }
 
             if (hasDuplicate) {
-                statusCheck status = new statusCheck(false, "There is already an existing request for this project!");
+                new statusCheck("There is already an existing request for this project!");
             } else if (dateBox.getSelectedItem() == null || monthBox.getSelectedItem() == null) {
-                statusCheck status = new statusCheck(false, "Month or date cannot be empty!");
+                new statusCheck("Month or date cannot be empty!");
             } else {
                 int date = Integer.parseInt((String) dateBox.getSelectedItem());
                 int month = Integer.parseInt((String) monthBox.getSelectedItem());
@@ -565,7 +565,7 @@ public class studentMenu extends userAttribute {
                     writer.write(stud.studID + ", " + reqProjBox.getSelectedItem().toString() + ", " + currentDate + ", " + finalCompile + ", " + "pending");
                     writer.newLine();
 
-                    statusCheck status = new statusCheck(true);
+                    new statusCheck("Request submitted");
                 } catch (IOException e) {
                     System.out.println("Error: " + e);
                 }
@@ -609,7 +609,7 @@ public class studentMenu extends userAttribute {
     private void checkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkButtonActionPerformed
 
         if ("".equals(checkProjBox.getSelectedItem().toString())) {
-            statusCheck substatus = new statusCheck(false, "please select a project");
+            new statusCheck("please select a project");
         }
         else {
             try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.submission))){
@@ -629,7 +629,7 @@ public class studentMenu extends userAttribute {
 
                 }
                 if (!submitted) {
-                    new statusCheck(false, "You have not submitted!");
+                    new statusCheck("You have not submitted!");
                 }
 
             }
@@ -660,7 +660,7 @@ public class studentMenu extends userAttribute {
                 } 
             }
             if (!atleast1) {
-                new statusCheck(false, "there is no ongoing assignment");
+                new statusCheck("there is no ongoing assignment");
             } 
         } 
         catch (IOException e) {

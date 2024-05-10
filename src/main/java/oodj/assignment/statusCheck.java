@@ -21,28 +21,9 @@ public class statusCheck extends javax.swing.JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
     }
-    public statusCheck(Boolean v, String phrase) {
+    public statusCheck(String phrase) {
         initComponents();
-        valid = v;
-        if (v) {
-            jLabel1.setText(phrase);
-            
-        }
-        else {
-            jLabel1.setText(phrase);
-        }
-        setVisible(true);
-        setLocationRelativeTo(null);
-    }
-    public statusCheck(Boolean v) {
-        initComponents();
-        valid = v;
-        if (v) {
-            jLabel1.setText("completed!");
-        }
-        else {
-            jLabel1.setText("input error.");
-        }
+        jLabel1.setText(phrase);
         setVisible(true);
         setLocationRelativeTo(null);
     }
