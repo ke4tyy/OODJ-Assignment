@@ -12,6 +12,7 @@ import oodj.assignment.*;
 import oodj.assignment.loginselection;
 
 public class studentMenu extends userAttribute {
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
     Student stud = new Student();
     public static String Id;
     public static String Name;
@@ -65,9 +66,7 @@ public class studentMenu extends userAttribute {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         requestButton = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        dateBox = new javax.swing.JComboBox<>();
-        monthBox = new javax.swing.JComboBox<>();
+        reqCalendar = new com.toedter.calendar.JCalendar();
         jPanel4 = new javax.swing.JPanel();
         checkProjBox = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
@@ -144,7 +143,7 @@ public class studentMenu extends userAttribute {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(subLink)
                     .addComponent(subMoodleLink, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84))
         );
@@ -195,7 +194,7 @@ public class studentMenu extends userAttribute {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGap(0, 397, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(86, 86, 86)
@@ -206,7 +205,7 @@ public class studentMenu extends userAttribute {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3)
                         .addComponent(linkTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(77, 77, 77)))
         );
@@ -224,59 +223,44 @@ public class studentMenu extends userAttribute {
             }
         });
 
-        jLabel7.setText("Select Month");
-
-        monthBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "", "9", "10", "11", "12" }));
-        monthBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                monthBoxActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(242, 242, 242)
-                .addComponent(requestButton, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(250, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(176, 176, 176)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel6)
-                        .addComponent(jLabel5)
-                        .addComponent(jLabel7))
-                    .addGap(91, 91, 91)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(reqProjBox, 0, 111, Short.MAX_VALUE)
-                        .addComponent(monthBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(dateBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addContainerGap(157, Short.MAX_VALUE)))
+                .addContainerGap(161, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(107, 107, 107)
+                                .addComponent(reqProjBox, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(156, 156, 156))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(reqCalendar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(66, 66, 66))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(requestButton, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(245, 245, 245))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(280, Short.MAX_VALUE)
+                .addContainerGap(76, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(reqProjBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(reqCalendar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(requestButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(77, 77, 77)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(reqProjBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(jLabel5)
-                            .addGap(42, 42, 42)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel7)
-                                .addComponent(monthBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGap(18, 18, 18)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(dateBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6))
-                    .addContainerGap(225, Short.MAX_VALUE)))
+                .addGap(42, 42, 42))
         );
 
         jTabbedPane1.addTab("Request Presentation Date", jPanel3);
@@ -309,7 +293,7 @@ public class studentMenu extends userAttribute {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(243, Short.MAX_VALUE)
+                .addContainerGap(210, Short.MAX_VALUE)
                 .addComponent(checkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(148, 148, 148))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,7 +302,7 @@ public class studentMenu extends userAttribute {
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(checkProjBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel8))
-                    .addContainerGap(241, Short.MAX_VALUE)))
+                    .addContainerGap(208, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Check Submission Status", jPanel4);
@@ -385,7 +369,7 @@ public class studentMenu extends userAttribute {
                     .addComponent(changeCfmTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(68, 68, 68)
                 .addComponent(changeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Change Password", jPanel5);
@@ -546,23 +530,13 @@ public class studentMenu extends userAttribute {
 
             if (hasDuplicate) {
                 new statusCheck("There is already an existing request for this project!");
-            } else if (dateBox.getSelectedItem() == null || monthBox.getSelectedItem() == null) {
-                new statusCheck("Month or date cannot be empty!");
-            } else {
-                int date = Integer.parseInt((String) dateBox.getSelectedItem());
-                int month = Integer.parseInt((String) monthBox.getSelectedItem());
-
-                Calendar cal = Calendar.getInstance();
-                cal.set(Calendar.MONTH, month - 1);
-                cal.set(Calendar.DAY_OF_MONTH, date);
-
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-                String finalCompile = dateFormat.format(cal.getTime());
-
+            }
+            else {
+                String projDate = dateFormat.format(reqCalendar.getDate());
                 String currentDate = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
 
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.request, true))) {
-                    writer.write(stud.studID + ", " + reqProjBox.getSelectedItem().toString() + ", " + currentDate + ", " + finalCompile + ", " + "pending");
+                    writer.write(stud.studID + ", " + reqProjBox.getSelectedItem().toString() + ", " + currentDate + ", " + projDate + ", " + "pending");
                     writer.newLine();
 
                     new statusCheck("Request submitted");
@@ -574,37 +548,6 @@ public class studentMenu extends userAttribute {
             System.out.println(e);
         }
     }//GEN-LAST:event_requestButtonActionPerformed
-
-    private void monthBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monthBoxActionPerformed
-        String selected  = (String) monthBox.getSelectedItem();
-        int day = 0;
-        switch (selected) {
-            case "1":
-            case "3":
-            case "5":
-            case "7":
-            case "8":
-            case "10":
-            case "12":
-            day = 31;
-            break;
-
-            case "4":
-            case "6":
-            case "9":
-            case "11":
-            day = 30;
-            break;
-
-            case "2":
-            day = 28;
-            break;
-        }
-
-        for (int i = 1; i <= day; i++) {
-            dateBox.addItem(String.valueOf(i));
-        }
-    }//GEN-LAST:event_monthBoxActionPerformed
 
     private void checkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkButtonActionPerformed
 
@@ -645,7 +588,8 @@ public class studentMenu extends userAttribute {
     }//GEN-LAST:event_changeButtonActionPerformed
 
     private void assignedProj() {
-        try ( BufferedReader reader = new BufferedReader(new FileReader(Assignment.assessment))){
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.assessment));
             String line;
             String id = "";
             boolean atleast1 = false;
@@ -712,7 +656,6 @@ public class studentMenu extends userAttribute {
     private javax.swing.JLabel changeOldpass;
     private javax.swing.JButton checkButton;
     private javax.swing.JComboBox<String> checkProjBox;
-    private javax.swing.JComboBox<String> dateBox;
     private javax.swing.JButton editButton;
     private javax.swing.JComboBox<String> editProjBox;
     public static javax.swing.JLabel jLabel1;
@@ -721,7 +664,6 @@ public class studentMenu extends userAttribute {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -732,7 +674,7 @@ public class studentMenu extends userAttribute {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField linkTxt;
     private javax.swing.JButton logoutBtn;
-    private javax.swing.JComboBox<String> monthBox;
+    private com.toedter.calendar.JCalendar reqCalendar;
     private javax.swing.JComboBox<String> reqProjBox;
     private javax.swing.JButton requestButton;
     private javax.swing.JLabel subLink;

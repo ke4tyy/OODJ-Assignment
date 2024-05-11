@@ -68,7 +68,7 @@ public abstract class userAttribute extends javax.swing.JFrame {
     }
     
         
-    public void changePassword(JTextPane txt1, JTextPane txt2, JTextPane txt3, String file, String role) {
+    public void changePassword(JTextPane txt1, JTextPane txt2, JTextPane txt3, String file, String id) {
         String check = txt1.getText().trim();
         String newPass = txt2.getText().trim();
         String cfmPass = txt3.getText().trim();
@@ -81,21 +81,25 @@ public abstract class userAttribute extends javax.swing.JFrame {
                 BufferedReader reader = new BufferedReader(new FileReader(file));
                 String line;
                 StringBuilder combined = new StringBuilder();
+                boolean same = false;
                 if (newPass.equals(cfmPass)) {
                     while ((line = reader.readLine()) != null) {
                         String[] pass = line.split(", ");
-                        if (role.equals(pass[0]) && pass[3].equals(check)) {
+                        if (id.equals(pass[0]) && pass[3].equals(check)) {
                             pass[3] = newPass;
+                            same = true;
                         }
                         combined.append(String.join(", ", pass)).append("\n");
-                    }//
+                    }
                     reader.close();
                     BufferedWriter writer = new BufferedWriter(new FileWriter(file));
                     writer.write(combined.toString());
                     writer.close();
+                    if (same) {
                     new statusCheck("Password Changed");
+                    }
                 }
-                else {
+                if (!newPass.equals(cfmPass) || !same) {
                     new statusCheck("credentials does not match.");
                 }
 
