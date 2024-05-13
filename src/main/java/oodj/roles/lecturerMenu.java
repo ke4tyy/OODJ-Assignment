@@ -1,5 +1,7 @@
 
 package oodj.roles;
+import oodj.assignment.Assignment;
+import oodj.assignment.userAttribute;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -9,7 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JComboBox;
-import oodj.assignment.*;
+import javax.swing.JOptionPane;
 import oodj.assignment.loginselection;
 
 /**
@@ -42,6 +44,7 @@ public class lecturerMenu extends userAttribute {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
@@ -74,6 +77,14 @@ public class lecturerMenu extends userAttribute {
         dateTxt = new javax.swing.JTextPane();
         dateTip = new javax.swing.JLabel();
         editBtn = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        supProj = new javax.swing.JLabel();
+        projSupBox = new javax.swing.JComboBox<>();
+        supAssigned = new javax.swing.JLabel();
+        supSupervisee = new javax.swing.JLabel();
+        supAssignedID = new javax.swing.JLabel();
+        supSuperviseeID = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         changeOldTxt = new javax.swing.JTextPane();
         changeNewTxt = new javax.swing.JTextPane();
@@ -83,22 +94,20 @@ public class lecturerMenu extends userAttribute {
         changeOldpass = new javax.swing.JLabel();
         changeNewpass = new javax.swing.JLabel();
         changeCfm = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        supProj = new javax.swing.JLabel();
-        projSupBox = new javax.swing.JComboBox<>();
-        supAssigned = new javax.swing.JLabel();
-        supSupervisee = new javax.swing.JLabel();
-        supAssignedID = new javax.swing.JLabel();
-        supSuperviseeID = new javax.swing.JLabel();
         logoutBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jPanel6.setBackground(new java.awt.Color(175, 133, 133));
+
+        jLabel1.setFont(new java.awt.Font("Perpetua Titling MT", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(30, 30, 30));
         jLabel1.setText("Welcome, ");
 
+        jTabbedPane1.setBackground(new java.awt.Color(215, 171, 171));
         jTabbedPane1.setToolTipText("");
+
+        jPanel3.setBackground(new java.awt.Color(110, 87, 87));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel7.setText("Review Presentation Request");
@@ -140,11 +149,8 @@ public class lecturerMenu extends userAttribute {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(121, Short.MAX_VALUE)
+                .addContainerGap(174, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(145, 145, 145))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -166,7 +172,10 @@ public class lecturerMenu extends userAttribute {
                                     .addComponent(studReqBox, javax.swing.GroupLayout.Alignment.LEADING, 0, 140, Short.MAX_VALUE)
                                     .addComponent(reqDateTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(projReqBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(126, 126, 126))))
+                        .addGap(126, 126, 126))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(164, 164, 164))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,10 +198,12 @@ public class lecturerMenu extends userAttribute {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(reqDeny, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(reqApprove, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("View Presentation Requests", jPanel3);
+
+        jPanel4.setBackground(new java.awt.Color(110, 87, 87));
 
         gradeBtn.setText("Grade");
         gradeBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -235,7 +246,7 @@ public class lecturerMenu extends userAttribute {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 89, Short.MAX_VALUE)
+                .addGap(0, 142, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(evalLink, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(evalGrade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -253,14 +264,13 @@ public class lecturerMenu extends userAttribute {
                                 .addComponent(studEvalBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(projEvalBox, javax.swing.GroupLayout.Alignment.LEADING, 0, 140, Short.MAX_VALUE)))
                         .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(gradeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(249, 249, 249))
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(222, 222, 222)
-                        .addComponent(gradeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(226, 226, 226)
+                .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -284,12 +294,14 @@ public class lecturerMenu extends userAttribute {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(evalGrade)
                     .addComponent(gradeBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
+                .addGap(46, 46, 46)
                 .addComponent(gradeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Evaluate Result", jPanel4);
+
+        jPanel1.setBackground(new java.awt.Color(110, 87, 87));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel4.setText("View Assigned Project");
@@ -321,10 +333,6 @@ public class lecturerMenu extends userAttribute {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(195, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(189, 189, 189))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(138, 138, 138)
@@ -340,8 +348,11 @@ public class lecturerMenu extends userAttribute {
                             .addComponent(dateTip, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(227, 227, 227)
-                        .addComponent(editBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(editBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(214, 214, 214)
+                        .addComponent(jLabel4)))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -362,77 +373,12 @@ public class lecturerMenu extends userAttribute {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(73, 73, 73)
                 .addComponent(editBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("View Assigned Project", jPanel1);
 
-        changeButton.setText("Change");
-        changeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                changeButtonActionPerformed(evt);
-            }
-        });
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Change password");
-
-        changeOldpass.setText("Enter old password: ");
-
-        changeNewpass.setText("Enter new password: ");
-
-        changeCfm.setText("Confirm new password: ");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(119, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(94, 94, 94))
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(changeCfm, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(changeNewpass, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(changeOldpass, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(changeOldTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(changeNewTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(changeCfmTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addContainerGap()))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(changeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(209, 209, 209))))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9)
-                .addGap(72, 72, 72)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(changeOldpass)
-                    .addComponent(changeOldTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(changeNewpass)
-                    .addComponent(changeNewTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(changeCfm)
-                    .addComponent(changeCfmTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(68, 68, 68)
-                .addComponent(changeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Change Password", jPanel5);
+        jPanel2.setBackground(new java.awt.Color(110, 87, 87));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel3.setText("View Assigned Supervisees");
@@ -456,7 +402,7 @@ public class lecturerMenu extends userAttribute {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(167, Short.MAX_VALUE)
+                .addContainerGap(220, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(164, 164, 164))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -493,10 +439,77 @@ public class lecturerMenu extends userAttribute {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(supAssigned)
                     .addComponent(supSupervisee, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("View Assigned Supervisees", jPanel2);
+
+        jPanel5.setBackground(new java.awt.Color(110, 87, 87));
+
+        changeButton.setText("Change");
+        changeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changeButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Change password");
+
+        changeOldpass.setText("Enter old password: ");
+
+        changeNewpass.setText("Enter new password: ");
+
+        changeCfm.setText("Confirm new password: ");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(133, 133, 133)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(changeCfm, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(changeNewpass, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(changeOldpass, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(changeOldTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(changeNewTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(changeCfmTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(changeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(115, 115, 115)))
+                .addContainerGap(133, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addGap(72, 72, 72)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(changeOldpass)
+                    .addComponent(changeOldTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(changeNewpass)
+                    .addComponent(changeNewTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(changeCfm)
+                    .addComponent(changeCfmTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(68, 68, 68)
+                .addComponent(changeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(106, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Change Password", jPanel5);
 
         logoutBtn.setText("Log Out");
         logoutBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -505,30 +518,38 @@ public class lecturerMenu extends userAttribute {
             }
         });
 
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logoutBtn)
+                .addContainerGap())
+            .addComponent(jTabbedPane1)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(logoutBtn)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPane1))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(logoutBtn))
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(logoutBtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -544,7 +565,7 @@ public class lecturerMenu extends userAttribute {
                 while ((line = reader.readLine()) != null) {
                     String[] sub = line.split(", ");
                     if (studEvalBox == null) {
-                        new statusCheck("no one had submitted.");
+                JOptionPane.showMessageDialog(this, "No one had submitted", "Error",  JOptionPane.INFORMATION_MESSAGE);
                         break;
                     }
                     else if (sub[0].equals(studEvalBox.getSelectedItem()) && sub[1].equals(projEvalBox.getSelectedItem())) {
@@ -578,7 +599,7 @@ public class lecturerMenu extends userAttribute {
             writer.write(build.toString());
             writer.close();
             
-            new statusCheck("Graded");
+                JOptionPane.showMessageDialog(this, "Graded", "Success",  JOptionPane.INFORMATION_MESSAGE);
             
         } catch (IOException e) {
             e.printStackTrace();
@@ -698,7 +719,7 @@ public class lecturerMenu extends userAttribute {
             writer.write(build.toString());
             writer.close();
 
-            new statusCheck("Editted successfully");
+                JOptionPane.showMessageDialog(this, "Editted successfully", "Success",  JOptionPane.INFORMATION_MESSAGE);
 
             
         } catch (IOException e) {
@@ -706,7 +727,7 @@ public class lecturerMenu extends userAttribute {
         }
         
         catch (ParseException ex) {
-                new statusCheck("invalid date format");
+                JOptionPane.showMessageDialog(this, "Invalid Date format", "Error",  JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_editBtnActionPerformed
 
@@ -763,7 +784,7 @@ public class lecturerMenu extends userAttribute {
             writer.write(build.toString());
             writer.close();
             
-            new statusCheck("completed");
+                JOptionPane.showMessageDialog(this, "Completed", "Success",  JOptionPane.INFORMATION_MESSAGE);
         
         } 
         catch (IOException e) {
@@ -783,7 +804,7 @@ public class lecturerMenu extends userAttribute {
                 }
             }
             if (!atleast1) {
-                new statusCheck(msg);
+                JOptionPane.showMessageDialog(this, msg, "Error",  JOptionPane.INFORMATION_MESSAGE);
                 targetBox.removeAllItems();
                 if (targetBox.equals(studEvalBox)) {
                     evalMoodle.setText("");
@@ -859,6 +880,7 @@ public class lecturerMenu extends userAttribute {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton logoutBtn;

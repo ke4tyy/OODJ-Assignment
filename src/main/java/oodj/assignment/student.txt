@@ -1,3 +1,0 @@
-000001, keat hao, whosinparis@gmail.com, pass1234, APD2F2402SE
-000002, Ravin, propoolguy@gmail.com, pass45, APD2F2402CS
-000003, Mike, mikel@gmail.com, pass789, APD2F2402CS

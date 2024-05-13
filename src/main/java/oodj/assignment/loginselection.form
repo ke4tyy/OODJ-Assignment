@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JComboBox" name="jComboBox1">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Item 1"/>
+            <StringItem index="1" value="Item 2"/>
+            <StringItem index="2" value="Item 3"/>
+            <StringItem index="3" value="Item 4"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="cc" green="0" red="ff" type="rgb"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -23,231 +43,281 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" min="-2" pref="608" max="-2" attributes="0"/>
-              <EmptySpace pref="18" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="286" max="-2" attributes="0"/>
-          </Group>
+          <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" min="-2" pref="383" max="-2" attributes="0"/>
-              <EmptySpace pref="22" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Container class="javax.swing.JPanel" name="jPanel3">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="24" style="0"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="85" green="85" red="af" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Login"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder/>
+          </Border>
+        </Property>
       </Properties>
-    </Component>
-    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
-      <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel1">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Student">
-                <Property name="tabTitle" type="java.lang.String" value="Student"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace pref="212" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="studentLoginBtn" min="-2" pref="197" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="studentPass" min="-2" pref="281" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="studentPw" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
-                              <Component id="studentUser" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jTextField1" min="-2" pref="282" max="-2" attributes="0"/>
-                          <EmptySpace pref="67" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="97" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="283" max="-2" attributes="0"/>
               </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="99" max="32767" attributes="0"/>
-                      <Component id="studentPass" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                      <Component id="studentLoginBtn" min="-2" pref="47" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="29" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="57" green="57" red="6e" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                <EmptyBorder/>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jPanel1">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="57" green="57" red="6e" type="rgb"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Student">
+                    <Property name="tabTitle" type="java.lang.String" value="Student"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
+                                  <Component id="studentLoginBtn" min="-2" pref="197" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="studentPw" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="studentUser" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="studentPass" pref="281" max="32767" attributes="0"/>
+                                      <Component id="studentNamemail" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="135" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="studentUser" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="studentNamemail" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="studentPw" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="228" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="studentPass" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="studentPw" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="170" max="32767" attributes="0"/>
+                          <Component id="studentLoginBtn" min="-2" pref="47" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="studentUser">
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JPasswordField" name="studentPass">
+                </Component>
+                <Component class="javax.swing.JButton" name="studentLoginBtn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Login"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentLoginBtnActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="studentUser">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="dd" green="dd" red="dd" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Enter username or email"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="studentPw">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="dd" green="dd" red="dd" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Enter password"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="studentNamemail">
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Enter username or email"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="57" green="57" red="6e" type="rgb"/>
+                </Property>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="studentPw">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Enter password"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="studentLoginBtn">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Login"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentLoginBtnActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JPasswordField" name="studentPass">
-            </Component>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="jPanel2">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Staff">
-                <Property name="tabTitle" type="java.lang.String" value="Staff"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Staff">
+                    <Property name="tabTitle" type="java.lang.String" value="Staff"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
 
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace pref="211" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="staffLoginBtn" min="-2" pref="197" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="staffPass" min="-2" pref="281" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="staffPw" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
-                              <Component id="staffUser" alignment="0" min="-2" pref="186" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
+                                  <Component id="staffLoginBtn" min="-2" pref="197" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="staffPw" min="-2" max="-2" attributes="0"/>
+                                      <Component id="staffUser" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="staffNamemail" min="-2" pref="282" max="-2" attributes="0"/>
+                                      <Component id="staffPass" min="-2" pref="281" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="staffNamemail" min="-2" pref="282" max="-2" attributes="0"/>
-                          <EmptySpace pref="67" max="32767" attributes="0"/>
+                          <EmptySpace pref="135" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="98" max="32767" attributes="0"/>
-                      <Component id="staffPass" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                      <Component id="staffLoginBtn" min="-2" pref="47" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="staffUser" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="staffNamemail" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="staffPw" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="228" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="staffPass" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="staffPw" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="170" max="32767" attributes="0"/>
+                          <Component id="staffLoginBtn" min="-2" pref="47" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JButton" name="staffLoginBtn">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Login"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="staffLoginBtnActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JLabel" name="staffUser">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Enter username or email"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="staffPw">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Enter password"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="staffNamemail">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="staffNamemailActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JPasswordField" name="staffPass">
-            </Component>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JButton" name="staffLoginBtn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Login"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="staffLoginBtnActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="staffUser">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="dd" green="dd" red="dd" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Enter username or email"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="staffPw">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="dd" green="dd" red="dd" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Enter password"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="staffNamemail">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="staffNamemailActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JPasswordField" name="staffPass">
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Perpetua Titling MT" size="24" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="1e" green="1e" red="1e" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Login"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

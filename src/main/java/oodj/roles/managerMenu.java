@@ -4,6 +4,8 @@
  */
 package oodj.roles;
 
+import oodj.assignment.Assignment;
+import oodj.assignment.userAttribute;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -16,8 +18,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import oodj.assignment.*;
 import oodj.assignment.loginselection;
 
 /**
@@ -51,6 +53,8 @@ public class managerMenu extends userAttribute {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel8 = new javax.swing.JPanel();
+        logoutBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -115,18 +119,31 @@ public class managerMenu extends userAttribute {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         reportIntakeBox = new javax.swing.JComboBox<>();
-        logoutBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jPanel8.setBackground(new java.awt.Color(175, 133, 133));
+
+        logoutBtn.setText("log out");
+        logoutBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Perpetua Titling MT", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(30, 30, 30));
         jLabel1.setText("Welcome, ");
+
+        jTabbedPane1.setBackground(new java.awt.Color(215, 171, 171));
+
+        jPanel1.setBackground(new java.awt.Color(110, 87, 87));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel2.setText("Create Project");
 
         jLabel3.setBackground(new java.awt.Color(102, 102, 102));
-        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Note : Project ID will be automatically assigned");
 
         jLabel4.setText("Enter Project Name :");
@@ -180,7 +197,7 @@ public class managerMenu extends userAttribute {
                                     .addComponent(createSup, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(createSecond, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel3))
-                        .addContainerGap(27, Short.MAX_VALUE))
+                        .addContainerGap(83, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,12 +240,14 @@ public class managerMenu extends userAttribute {
                             .addComponent(createCalendar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 245, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 291, Short.MAX_VALUE)
                         .addComponent(createButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(108, 108, 108))))
         );
 
         jTabbedPane1.addTab("Create Project", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(110, 87, 87));
 
         jLabel9.setText("Select Project : ");
 
@@ -309,7 +328,7 @@ public class managerMenu extends userAttribute {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(51, 51, 51)))))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,7 +339,7 @@ public class managerMenu extends userAttribute {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(editProjBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,8 +366,14 @@ public class managerMenu extends userAttribute {
 
         jTabbedPane1.addTab("Edit Project", jPanel2);
 
+        jPanel3.setBackground(new java.awt.Color(110, 87, 87));
+
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel16.setText("Enroll Student");
+
+        jTabbedPane2.setBackground(new java.awt.Color(215, 171, 171));
+
+        jPanel5.setBackground(new java.awt.Color(85, 66, 66));
 
         jLabel19.setText("Select Student :");
 
@@ -366,7 +391,7 @@ public class managerMenu extends userAttribute {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(204, Short.MAX_VALUE)
+                .addContainerGap(259, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -394,10 +419,12 @@ public class managerMenu extends userAttribute {
                     .addComponent(enrProj1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(86, 86, 86)
                 .addComponent(enrollButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Individual", jPanel5);
+
+        jPanel4.setBackground(new java.awt.Color(85, 66, 66));
 
         jLabel17.setText("Select Intake :");
 
@@ -415,7 +442,7 @@ public class managerMenu extends userAttribute {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(208, Short.MAX_VALUE)
+                .addContainerGap(263, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -443,7 +470,7 @@ public class managerMenu extends userAttribute {
                     .addComponent(enrProj2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(86, 86, 86)
                 .addComponent(enrollButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("By Intake", jPanel4);
@@ -452,14 +479,15 @@ public class managerMenu extends userAttribute {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel16)
-                .addGap(284, 284, 284))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(299, 299, 299)
+                        .addComponent(jLabel16))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -467,11 +495,13 @@ public class managerMenu extends userAttribute {
                 .addContainerGap()
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Enroll Student", jPanel3);
+
+        jPanel6.setBackground(new java.awt.Color(110, 87, 87));
 
         reportSTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -519,7 +549,7 @@ public class managerMenu extends userAttribute {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 687, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(21, Short.MAX_VALUE))
+                        .addContainerGap(77, Short.MAX_VALUE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel22)
@@ -551,10 +581,12 @@ public class managerMenu extends userAttribute {
                             .addComponent(jLabel22)
                             .addComponent(reportSGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(reportSCal, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("View Student Report", jPanel6);
+
+        jPanel7.setBackground(new java.awt.Color(110, 87, 87));
 
         reportITable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -652,42 +684,45 @@ public class managerMenu extends userAttribute {
                             .addComponent(jLabel23)
                             .addComponent(reportIGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(reportICal, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("View Intake Report", jPanel7);
 
-        logoutBtn.setText("log out");
-        logoutBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutBtnActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logoutBtn)
+                .addGap(15, 15, 15))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 783, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(logoutBtn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPane1))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(logoutBtn))
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 727, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(logoutBtn))
-                .addGap(6, 6, 6)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -715,7 +750,7 @@ public class managerMenu extends userAttribute {
         String projID = "";    
         
         if (createProjTxt.getText().isEmpty() || createSup.getSelectedItem() == null || createSecond.getSelectedItem() == null ) {
-            new statusCheck("Project variables cannot be empty!"); 
+                JOptionPane.showMessageDialog(this, "Project variables cannot be empty", "Error",  JOptionPane.INFORMATION_MESSAGE);
         }
         else {
             try {
@@ -734,7 +769,7 @@ public class managerMenu extends userAttribute {
                         projID = "P" + String.format("%03d", temp);
                         if (proj.length >= 3 && proj[1].equals(projName) && proj[2].equals(projCat)) {
                             valid = false;
-                            new statusCheck("There is already an existing project with this name.");
+                JOptionPane.showMessageDialog(this, "There is already an existing project with this name", "Error",  JOptionPane.INFORMATION_MESSAGE);
                             break;
                     }
                     }
@@ -748,7 +783,7 @@ public class managerMenu extends userAttribute {
                     
                     writer.close();
                     
-                    new statusCheck("Project Created");
+                JOptionPane.showMessageDialog(this, "Project created", "Error",  JOptionPane.INFORMATION_MESSAGE);
                 }
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
@@ -769,7 +804,7 @@ public class managerMenu extends userAttribute {
 
         
         if (editProjTxt.getText().isEmpty() || editSup.getSelectedItem() == null || editSecond.getSelectedItem() == null ) {
-            new statusCheck("Project variables cannot be empty!"); 
+                JOptionPane.showMessageDialog(this, "Project variables cannot be empty", "Error",  JOptionPane.INFORMATION_MESSAGE);
         }
         else {
             try {
@@ -801,7 +836,7 @@ public class managerMenu extends userAttribute {
                 writer.write(build.toString());
                 writer.close();
                 
-                new statusCheck("edited successfully");
+                JOptionPane.showMessageDialog(this, "Editted successfully", "Success",  JOptionPane.INFORMATION_MESSAGE);
                 
             } catch (IOException ex) {
                 ex.printStackTrace();
@@ -857,7 +892,7 @@ public class managerMenu extends userAttribute {
                 String[] comp = line.split(", ");
                 temp = comp[0] + ", " + comp[1];
                 if (temp.equals(check)) {
-                    new statusCheck("Project is already assigned to this student");
+                JOptionPane.showMessageDialog(this, "Project is already assigned to this student", "Error",  JOptionPane.INFORMATION_MESSAGE);
                     valid = false;
                 }
             }
@@ -868,7 +903,7 @@ public class managerMenu extends userAttribute {
                 writer.write(check + ", " + null + ", " + null);
                 writer.newLine();
                 writer.close();
-                new statusCheck("assigned successfully");
+                JOptionPane.showMessageDialog(this, "Assigned successfully", "Success",  JOptionPane.INFORMATION_MESSAGE);
             }
             
         
@@ -909,7 +944,7 @@ public class managerMenu extends userAttribute {
                     String[] assess = line.split(", ");
                     temp2 = assess.length > 1 ? assess[0] + ", " + assess[1] : "";
                     if (temp.equals(temp2)) {
-                        new statusCheck("Some students in the intake are enrolled into this project");
+                JOptionPane.showMessageDialog(this, "Some students are already enrolled to this project", "Error",  JOptionPane.INFORMATION_MESSAGE);
                         v = false;
                     }
                 }    
@@ -925,11 +960,11 @@ public class managerMenu extends userAttribute {
                     write.write(combine);
                     write.newLine();
                 }
-                new statusCheck("enrolled successfully");
+                JOptionPane.showMessageDialog(this, "Enrolled successfully", "Success",  JOptionPane.INFORMATION_MESSAGE);
                 write.close();
             }
             else {
-                new statusCheck("intake contains less than 2 students");
+                JOptionPane.showMessageDialog(this, "Intake contains less than 2 students", "Error",  JOptionPane.INFORMATION_MESSAGE);
             }
 
             
@@ -1256,6 +1291,7 @@ public class managerMenu extends userAttribute {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;

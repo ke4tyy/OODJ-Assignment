@@ -19,6 +19,7 @@ import javax.swing.*;
 //this file is for the purpose of defining users wherever they go, for ease of use and fulfill the requirement of abstract class
 
 public abstract class userAttribute extends javax.swing.JFrame {
+    
     //student
     public static class Student{
         public static String studID;
@@ -74,7 +75,7 @@ public abstract class userAttribute extends javax.swing.JFrame {
         String cfmPass = txt3.getText().trim();
 
         if (check.isEmpty() || newPass.isEmpty() || cfmPass.isEmpty()) {
-            new statusCheck("password cannot be empty!");
+                JOptionPane.showMessageDialog(this, "Password cannot be empty", "Error",  JOptionPane.INFORMATION_MESSAGE);
         }
         else {
             try {
@@ -96,11 +97,11 @@ public abstract class userAttribute extends javax.swing.JFrame {
                     writer.write(combined.toString());
                     writer.close();
                     if (same) {
-                    new statusCheck("Password Changed");
+                JOptionPane.showMessageDialog(this, "Password Changed", "Success",  JOptionPane.INFORMATION_MESSAGE);
                     }
                 }
                 if (!newPass.equals(cfmPass) || !same) {
-                    new statusCheck("credentials does not match.");
+                JOptionPane.showMessageDialog(this, "Credentials does not match", "Error",  JOptionPane.INFORMATION_MESSAGE);
                 }
 
             }

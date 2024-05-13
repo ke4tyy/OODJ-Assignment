@@ -4,6 +4,8 @@
  */
 package oodj.roles;
 
+import oodj.assignment.Assignment;
+import oodj.assignment.userAttribute;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -11,8 +13,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
-import oodj.assignment.*;
 import oodj.assignment.loginselection;
 
 /**
@@ -49,6 +51,7 @@ public class adminMenu extends userAttribute {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         logoutBtn = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -181,8 +184,12 @@ public class adminMenu extends userAttribute {
         assignButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(186, 145, 91));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jPanel5.setBackground(new java.awt.Color(175, 133, 133));
+
+        jLabel1.setFont(new java.awt.Font("Perpetua Titling MT", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(30, 30, 30));
         jLabel1.setText("Welcome, ");
 
         logoutBtn.setText("Log Out");
@@ -192,7 +199,13 @@ public class adminMenu extends userAttribute {
             }
         });
 
-        jLabel48.setForeground(new java.awt.Color(102, 102, 102));
+        jTabbedPane1.setBackground(new java.awt.Color(215, 171, 171));
+
+        jTabbedPane3.setBackground(new java.awt.Color(215, 171, 171));
+
+        jPanel11.setBackground(new java.awt.Color(110, 87, 87));
+
+        jLabel48.setForeground(new java.awt.Color(204, 204, 204));
         jLabel48.setText("Note : Student ID will automatically be assigned");
 
         jLabel49.setText("Enter Student Name :");
@@ -212,6 +225,7 @@ public class adminMenu extends userAttribute {
             }
         });
 
+        jCheckBox1.setBackground(new java.awt.Color(110, 87, 87));
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
@@ -245,7 +259,7 @@ public class adminMenu extends userAttribute {
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(238, 238, 238)
                         .addComponent(studRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,9 +293,11 @@ public class adminMenu extends userAttribute {
 
         jTabbedPane3.addTab("Student", jPanel11);
 
+        jPanel14.setBackground(new java.awt.Color(110, 87, 87));
+
         jLabel10.setText("Enter Lecturer Email :");
 
-        jLabel11.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("Note : Lecturer ID will automatically be assigned");
 
         jLabel12.setText("Enter Lecturer Name :");
@@ -328,7 +344,7 @@ public class adminMenu extends userAttribute {
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addGap(239, 239, 239)
                         .addComponent(lectRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,6 +374,8 @@ public class adminMenu extends userAttribute {
 
         jTabbedPane3.addTab("Lecturer", jPanel14);
 
+        jPanel15.setBackground(new java.awt.Color(110, 87, 87));
+
         jLabel17.setText("Enter Admin Email :");
 
         jLabel18.setText("Enter Admin Password :");
@@ -371,7 +389,7 @@ public class adminMenu extends userAttribute {
 
         jLabel15.setText("Enter Admin Name :");
 
-        jLabel16.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel16.setForeground(new java.awt.Color(204, 204, 204));
         jLabel16.setText("Note : admin ID will automatically be assigned");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
@@ -397,7 +415,7 @@ public class adminMenu extends userAttribute {
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGap(239, 239, 239)
                         .addComponent(adRegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,6 +453,10 @@ public class adminMenu extends userAttribute {
         );
 
         jTabbedPane1.addTab("Register", jPanel4);
+
+        jTabbedPane2.setBackground(new java.awt.Color(215, 171, 171));
+
+        jPanel8.setBackground(new java.awt.Color(110, 87, 87));
 
         jScrollPane2.setViewportView(editStudMail);
 
@@ -489,7 +511,7 @@ public class adminMenu extends userAttribute {
                             .addComponent(jScrollPane2)
                             .addComponent(jScrollPane3)
                             .addComponent(editSIntBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -520,6 +542,8 @@ public class adminMenu extends userAttribute {
         );
 
         jTabbedPane2.addTab("Student", jPanel8);
+
+        jPanel9.setBackground(new java.awt.Color(110, 87, 87));
 
         jScrollPane6.setViewportView(editLectName);
 
@@ -570,7 +594,7 @@ public class adminMenu extends userAttribute {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(243, 243, 243)
                         .addComponent(editLecturerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(213, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -597,6 +621,8 @@ public class adminMenu extends userAttribute {
         );
 
         jTabbedPane2.addTab("Lecturer", jPanel9);
+
+        jPanel10.setBackground(new java.awt.Color(110, 87, 87));
 
         jScrollPane7.setViewportView(editProjName);
 
@@ -651,7 +677,7 @@ public class adminMenu extends userAttribute {
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(243, 243, 243)
                         .addComponent(editProjectBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(213, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -682,6 +708,8 @@ public class adminMenu extends userAttribute {
         );
 
         jTabbedPane2.addTab("Project Manager", jPanel10);
+
+        jPanel3.setBackground(new java.awt.Color(110, 87, 87));
 
         editAdBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -732,7 +760,7 @@ public class adminMenu extends userAttribute {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(243, 243, 243)
                         .addComponent(editAdminBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(220, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -773,6 +801,10 @@ public class adminMenu extends userAttribute {
 
         jTabbedPane1.addTab("Edit Details", jPanel7);
 
+        jTabbedPane4.setBackground(new java.awt.Color(215, 171, 171));
+
+        jPanel2.setBackground(new java.awt.Color(110, 87, 87));
+
         jLabel2.setText("Select Student :");
 
         deleteStudentBox.addActionListener(new java.awt.event.ActionListener() {
@@ -809,7 +841,7 @@ public class adminMenu extends userAttribute {
                     .addComponent(jLabel7)
                     .addComponent(jLabel6)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(deleteStudentName, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                     .addComponent(deleteStudentMail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -843,6 +875,8 @@ public class adminMenu extends userAttribute {
         );
 
         jTabbedPane4.addTab("Student", jPanel2);
+
+        jPanel6.setBackground(new java.awt.Color(110, 87, 87));
 
         jLabel3.setText("Select Lecturer :");
 
@@ -882,7 +916,7 @@ public class adminMenu extends userAttribute {
                             .addComponent(jLabel4)
                             .addComponent(jLabel37)
                             .addComponent(jLabel38))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(deleteLectBox, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -919,6 +953,8 @@ public class adminMenu extends userAttribute {
 
         jTabbedPane4.addTab("Lecturer & Project Manager", jPanel6);
 
+        jPanel13.setBackground(new java.awt.Color(110, 87, 87));
+
         jLabel39.setText("Name :");
 
         jLabel40.setText("Email :");
@@ -954,7 +990,7 @@ public class adminMenu extends userAttribute {
                             .addComponent(jLabel43)
                             .addComponent(jLabel40)
                             .addComponent(jLabel39))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(deleteAdminBox, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1001,6 +1037,8 @@ public class adminMenu extends userAttribute {
 
         jTabbedPane1.addTab("Delete", jPanel1);
 
+        DeleteLectRole.setBackground(new java.awt.Color(110, 87, 87));
+
         jLabel8.setText("Select lecturer : ");
 
         assignButton.setText("Assign");
@@ -1015,7 +1053,7 @@ public class adminMenu extends userAttribute {
         DeleteLectRoleLayout.setHorizontalGroup(
             DeleteLectRoleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DeleteLectRoleLayout.createSequentialGroup()
-                .addContainerGap(159, Short.MAX_VALUE)
+                .addContainerGap(228, Short.MAX_VALUE)
                 .addComponent(jLabel8)
                 .addGap(78, 78, 78)
                 .addComponent(assignLBox, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1039,32 +1077,38 @@ public class adminMenu extends userAttribute {
 
         jTabbedPane1.addTab("Assign Project Manager", DeleteLectRole);
 
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logoutBtn)
+                .addGap(16, 16, 16))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(logoutBtn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
-                        .addComponent(logoutBtn)))
-                .addGap(20, 20, 20))
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(logoutBtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -1075,104 +1119,163 @@ public class adminMenu extends userAttribute {
         dispose();
     }//GEN-LAST:event_logoutBtnActionPerformed
 
-    private void adRegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adRegisterBtnActionPerformed
-        String name = adName.getText();
-        String mail = adMail.getText();
-        String pass = adPass.getText();
-
+    private void assignButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignButtonActionPerformed
+        String lectID = (String) assignLBox.getSelectedItem();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
+            StringBuilder builder = new StringBuilder();
             String line;
-            ArrayList<Integer> id = new ArrayList<>();
 
             while ((line = reader.readLine()) != null) {
-                String[] admin = line.split(", ");
-                if (name.isEmpty() || mail.isEmpty() || pass.isEmpty()) {
-                    new statusCheck("credentials cannot be empty");
-                    return;
+                String[] lec = line.split(", ");
+                if (lec[0].equals(lectID)) {
+                    lec[4] = "p";
                 }
-                else if (mail.equals(admin[2])) {
-                    new statusCheck("email exists within the system");
-                    return;
-                }
-                else {
-                    id.add(Integer.parseInt(admin[0]));
-                }
+                builder.append(String.join(", ", lec)).append("\n");
             }
-            int maxID = 0;
+            reader.close();
 
-            for (int i : id) {
-                if (i > maxID) {
-                    maxID = i;
-                }
-            }
-            int finalID = maxID + 1;
-
-            String newLine = String.format("%06d, %s, %s, %s, a", finalID, name, mail, pass);
-
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user, true));
-            writer.write(newLine);
-            writer.newLine();
+            BufferedWriter writer = new BufferedWriter (new FileWriter(Assignment.user));
+            writer.write(builder.toString());
             writer.close();
-            new statusCheck("admin registered.");
+
+            JOptionPane.showMessageDialog(this, "Role changed successfully", "Success",  JOptionPane.INFORMATION_MESSAGE);
         }
         catch (IOException e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_adRegisterBtnActionPerformed
+    }//GEN-LAST:event_assignButtonActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
-
-    private void lectRegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lectRegisterBtnActionPerformed
-        String name = lectName.getText();
-        String mail = lectMail.getText();
-        String pass = lectPass.getText();
-        String role = "l";
-
+    private void deleteAdminBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAdminBoxActionPerformed
         try {
             BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
             String line;
-            ArrayList<Integer> id = new ArrayList<>();
 
             while ((line = reader.readLine()) != null) {
-                String[] lecturer = line.split(", ");
-                if (name.isEmpty() || mail.isEmpty() || pass.isEmpty()) {
-                    new statusCheck("credentials cannot be empty");
-                    return;
-                }
-                else if (name.toLowerCase().equals(lecturer[1].toLowerCase()) || mail.equals(lecturer[2])) {
-                    new statusCheck("this name / email exists within the system");
-                    return;
-                }
-                else {
-                    id.add(Integer.parseInt(lecturer[0]));
-                }
-            }
-            int maxID = 0;
+                String[] user = line.split(", ");
+                if (user[0].equals(deleteAdminBox.getSelectedItem())) {
+                    deleteAdminName.setText(user[1]);
+                    deleteAdminMail.setText(user[2]);
 
-            for (int i : id) {
-                if (i > maxID) {
-                    maxID = i;
+                    break;
                 }
             }
-            int finalID = maxID + 1;
-            if (jCheckBox2.isSelected()) {
-                role = "p";
-            }
-            String newLine = String.format("%06d, %s, %s, %s, %s", finalID, name, mail, pass, role);
-
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user, true));
-            writer.write(newLine);
-            writer.newLine();
-            writer.close();
-            new statusCheck("lecturer registered.");
         }
         catch (IOException e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_lectRegisterBtnActionPerformed
+    }//GEN-LAST:event_deleteAdminBoxActionPerformed
+
+    private void deleteAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAdminBtnActionPerformed
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
+            StringBuilder builder = new StringBuilder();
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] user = line.split(", ");
+                if (! user[0].equals(deleteAdminBox.getSelectedItem())) {
+                    builder.append(line).append("\n");
+                }
+            }
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user));
+            writer.write(builder.toString());
+            writer.close();
+            JOptionPane.showMessageDialog(this, "User deleted successfully", "Success",  JOptionPane.INFORMATION_MESSAGE);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_deleteAdminBtnActionPerformed
+
+    private void deleteLectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteLectBtnActionPerformed
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
+            StringBuilder builder = new StringBuilder();
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] lect = line.split(", ");
+                if (! lect[0].equals(deleteLectBox.getSelectedItem())) {
+                    builder.append(line).append("\n");
+                }
+            }
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user));
+            writer.write(builder.toString());
+            writer.close();
+            JOptionPane.showMessageDialog(this, "User deleted successfully", "Success",  JOptionPane.INFORMATION_MESSAGE);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_deleteLectBtnActionPerformed
+
+    private void deleteLectBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteLectBoxActionPerformed
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] role = line.split(", ");
+                if (role[0].equals(deleteLectBox.getSelectedItem())) {
+                    deleteLectName.setText(role[0]);
+                    deleteLectMail.setText(role[2]);
+
+                    if (role[4].equals("l")) {
+                        jLabel5.setText("Lecturer");
+                    }
+                    else if (role[4].equals("p")) {
+                        jLabel5.setText("Project Manager");
+                    }
+                }
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_deleteLectBoxActionPerformed
+
+    private void deleteStudentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStudentBtnActionPerformed
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.student));
+            StringBuilder builder = new StringBuilder();
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] stud = line.split(", ");
+                if (! stud[0].equals(deleteStudentBox.getSelectedItem())) {
+                    builder.append(line).append("\n");
+                }
+            }
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.student));
+            writer.write(builder.toString());
+            writer.close();
+            JOptionPane.showMessageDialog(this, "Student deleted successfully", "Success",  JOptionPane.INFORMATION_MESSAGE);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_deleteStudentBtnActionPerformed
+
+    private void deleteStudentBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStudentBoxActionPerformed
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(Assignment.student));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] user = line.split(", ");
+                if (user[0].equals(deleteStudentBox.getSelectedItem())) {
+                    deleteStudentName.setText(user[1]);
+                    deleteStudentMail.setText(user[2]);
+                    deleteStudentIntake.setText(user[4]);
+                    break;
+                }
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_deleteStudentBoxActionPerformed
 
     private void editAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editAdminBtnActionPerformed
         editCred(editAdBox, Assignment.user, editAdName, editAdMail, editAdPass, editSIntBox, "a");
@@ -1279,170 +1382,115 @@ public class adminMenu extends userAttribute {
         editCred(editStudentBox, Assignment.student, editStudName, editStudMail, editStudPass, editSIntBox, "s");
     }//GEN-LAST:event_editStudentBtnActionPerformed
 
-    private void assignButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignButtonActionPerformed
-        String lectID = (String) assignLBox.getSelectedItem();
+    private void adRegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adRegisterBtnActionPerformed
+        String name = adName.getText();
+        String mail = adMail.getText();
+        String pass = adPass.getText();
+
         try {
             BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
-            StringBuilder builder = new StringBuilder();
             String line;
+            ArrayList<Integer> id = new ArrayList<>();
 
             while ((line = reader.readLine()) != null) {
-                String[] lec = line.split(", ");
-                if (lec[0].equals(lectID)) {
-                    lec[4] = "p";
+                String[] admin = line.split(", ");
+                if (name.isEmpty() || mail.isEmpty() || pass.isEmpty()) {
+                    JOptionPane.showMessageDialog(this, "Credentials cannot be empty", "Error", JOptionPane.INFORMATION_MESSAGE);
+                    return;
                 }
-                builder.append(String.join(", ", lec)).append("\n");
+                else if (mail.equals(admin[2])) {
+                    JOptionPane.showMessageDialog(this, "Email exists within the system", "Error", JOptionPane.INFORMATION_MESSAGE);
+                    return;
+                }
+                else {
+                    id.add(Integer.parseInt(admin[0]));
+                }
             }
-            reader.close();
+            int maxID = 0;
 
-            BufferedWriter writer = new BufferedWriter (new FileWriter(Assignment.user));
-            writer.write(builder.toString());
+            for (int i : id) {
+                if (i > maxID) {
+                    maxID = i;
+                }
+            }
+            int finalID = maxID + 1;
+
+            String newLine = String.format("%06d, %s, %s, %s, a", finalID, name, mail, pass);
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user, true));
+            writer.write(newLine);
+            writer.newLine();
             writer.close();
-
-            new statusCheck("role changed successfully");
+            JOptionPane.showMessageDialog(this, "Admin registered", "Success",  JOptionPane.INFORMATION_MESSAGE);
         }
         catch (IOException e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_assignButtonActionPerformed
+    }//GEN-LAST:event_adRegisterBtnActionPerformed
 
-    private void deleteLectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteLectBtnActionPerformed
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
+
+    private void lectRegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lectRegisterBtnActionPerformed
+        String name = lectName.getText();
+        String mail = lectMail.getText();
+        String pass = lectPass.getText();
+        String role = "l";
+
         try {
             BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
-            StringBuilder builder = new StringBuilder();
             String line;
+            ArrayList<Integer> id = new ArrayList<>();
 
             while ((line = reader.readLine()) != null) {
-                String[] lect = line.split(", ");
-                if (! lect[0].equals(deleteLectBox.getSelectedItem())) {
-                    builder.append(line).append("\n");
+                String[] lecturer = line.split(", ");
+                if (name.isEmpty() || mail.isEmpty() || pass.isEmpty()) {
+                    JOptionPane.showMessageDialog(this, "Credentials cannot be empty", "Error",  JOptionPane.INFORMATION_MESSAGE);
+                    return;
+                }
+                else if (mail.equals(lecturer[2])) {
+                    JOptionPane.showMessageDialog(this, "This email exists within the system", "Error",  JOptionPane.INFORMATION_MESSAGE);
+                    return;
+                }
+                else {
+                    id.add(Integer.parseInt(lecturer[0]));
                 }
             }
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user));
-            writer.write(builder.toString());
+            int maxID = 0;
+
+            for (int i : id) {
+                if (i > maxID) {
+                    maxID = i;
+                }
+            }
+            int finalID = maxID + 1;
+            if (jCheckBox2.isSelected()) {
+                role = "p";
+            }
+            String newLine = String.format("%06d, %s, %s, %s, %s", finalID, name, mail, pass, role);
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user, true));
+            writer.write(newLine);
+            writer.newLine();
             writer.close();
-            new statusCheck("User deleted successfully");
+            JOptionPane.showMessageDialog(this, "Lecturer registered", "Success",  JOptionPane.INFORMATION_MESSAGE);
         }
         catch (IOException e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_deleteLectBtnActionPerformed
+    }//GEN-LAST:event_lectRegisterBtnActionPerformed
 
-    private void deleteLectBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteLectBoxActionPerformed
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
-            String line;
-
-            while ((line = reader.readLine()) != null) {
-                String[] role = line.split(", ");
-                if (role[0].equals(deleteLectBox.getSelectedItem())) {
-                    deleteLectName.setText(role[0]);
-                    deleteLectMail.setText(role[2]);
-
-                    if (role[4].equals("l")) {
-                        jLabel5.setText("Lecturer");
-                    }
-                    else if (role[4].equals("p")) {
-                        jLabel5.setText("Project Manager");
-                    }
-                }
-            }
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_deleteLectBoxActionPerformed
-
-    private void deleteStudentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStudentBtnActionPerformed
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(Assignment.student));
-            StringBuilder builder = new StringBuilder();
-            String line;
-
-            while ((line = reader.readLine()) != null) {
-                String[] stud = line.split(", ");
-                if (! stud[0].equals(deleteStudentBox.getSelectedItem())) {
-                    builder.append(line).append("\n");
-                }
-            }
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.student));
-            writer.write(builder.toString());
-            writer.close();
-            new statusCheck("Student deleted successfully");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_deleteStudentBtnActionPerformed
-
-    private void deleteStudentBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStudentBoxActionPerformed
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(Assignment.student));
-            String line;
-
-            while ((line = reader.readLine()) != null) {
-                String[] user = line.split(", ");
-                if (user[0].equals(deleteStudentBox.getSelectedItem())) {
-                    deleteStudentName.setText(user[1]);
-                    deleteStudentMail.setText(user[2]);
-                    deleteStudentIntake.setText(user[4]);
-                    break;
-                }
-            }
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_deleteStudentBoxActionPerformed
-
-    private void deleteAdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAdminBtnActionPerformed
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
-            StringBuilder builder = new StringBuilder();
-            String line;
-
-            while ((line = reader.readLine()) != null) {
-                String[] user = line.split(", ");
-                if (! user[0].equals(deleteAdminBox.getSelectedItem())) {
-                    builder.append(line).append("\n");
-                }
-            }
-            BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.user));
-            writer.write(builder.toString());
-            writer.close();
-            new statusCheck("User deleted successfully");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_deleteAdminBtnActionPerformed
-
-    private void deleteAdminBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAdminBoxActionPerformed
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(Assignment.user));
-            String line;
-
-            while ((line = reader.readLine()) != null) {
-                String[] user = line.split(", ");
-                if (user[0].equals(deleteAdminBox.getSelectedItem())) {
-                    deleteAdminName.setText(user[1]);
-                    deleteAdminMail.setText(user[2]);
-
-                    break;
-                }
-            }
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_deleteAdminBoxActionPerformed
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void studRegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studRegisterBtnActionPerformed
         String name = studName.getText();
         String mail = studMail.getText();
         String pass = studPass.getText();
         String intake = (String) studIntakeBox.getSelectedItem();
-        
+
         if (jCheckBox1.isSelected()) {
             intake = null;
         }
@@ -1455,11 +1503,11 @@ public class adminMenu extends userAttribute {
             while ((line = reader.readLine()) != null) {
                 String[] student = line.split(", ");
                 if (name.isEmpty() || mail.isEmpty() || pass.isEmpty()) {
-                    new statusCheck("credentials cannot be empty");
+                    JOptionPane.showMessageDialog(this, "Credentials cannot be empty", "Error",  JOptionPane.INFORMATION_MESSAGE);
                     return;
                 }
                 else if (mail.equals(student[2])) {
-                    new statusCheck("this email exists within the system");
+                    JOptionPane.showMessageDialog(this, "This email exists within the system", "Error",  JOptionPane.INFORMATION_MESSAGE);
                     return;
                 }
                 else {
@@ -1474,23 +1522,19 @@ public class adminMenu extends userAttribute {
                 }
             }
             int finalID = maxID + 1;
-            
+
             String newLine = String.format("%06d, %s, %s, %s, %s", finalID, name, mail, pass, intake);
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(Assignment.student, true));
             writer.write(newLine);
             writer.newLine();
             writer.close();
-            new statusCheck("student registered.");
+            JOptionPane.showMessageDialog(this, "Student registered", "Success",  JOptionPane.INFORMATION_MESSAGE);
         }
         catch (IOException e) {
             e.printStackTrace();
         }
     }//GEN-LAST:event_studRegisterBtnActionPerformed
-
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void assignVar() {
         try {
@@ -1576,7 +1620,7 @@ public class adminMenu extends userAttribute {
             BufferedWriter writer = new BufferedWriter(new FileWriter(filepath));
             writer.write(build.toString());
             writer.close();
-            new statusCheck("Editted successfully");
+                JOptionPane.showMessageDialog(this, "Editted successfully", "Success",  JOptionPane.INFORMATION_MESSAGE);
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -1719,6 +1763,7 @@ public class adminMenu extends userAttribute {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
